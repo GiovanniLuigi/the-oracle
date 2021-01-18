@@ -14,6 +14,8 @@
 		1127822C25B5C1BF0072F547 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1127822B25B5C1BF0072F547 /* Assets.xcassets */; };
 		1127822F25B5C1BF0072F547 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1127822D25B5C1BF0072F547 /* LaunchScreen.storyboard */; };
 		1127823A25B5C1BF0072F547 /* TheOracleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1127823925B5C1BF0072F547 /* TheOracleTests.swift */; };
+		1127824A25B5C2AC0072F547 /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1127824925B5C2AC0072F547 /* Network.swift */; };
+		1127824C25B5C2B40072F547 /* DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1127824B25B5C2B40072F547 /* DataSource.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +40,8 @@
 		1127823525B5C1BF0072F547 /* TheOracleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TheOracleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1127823925B5C1BF0072F547 /* TheOracleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TheOracleTests.swift; sourceTree = "<group>"; };
 		1127823B25B5C1BF0072F547 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1127824925B5C2AC0072F547 /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
+		1127824B25B5C2B40072F547 /* DataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataSource.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,13 +83,11 @@
 		1127822125B5C1BE0072F547 /* TheOracle */ = {
 			isa = PBXGroup;
 			children = (
-				1127822225B5C1BE0072F547 /* AppDelegate.swift */,
-				1127822425B5C1BE0072F547 /* SceneDelegate.swift */,
-				1127822625B5C1BE0072F547 /* ViewController.swift */,
-				1127822825B5C1BE0072F547 /* Main.storyboard */,
-				1127822B25B5C1BF0072F547 /* Assets.xcassets */,
-				1127822D25B5C1BF0072F547 /* LaunchScreen.storyboard */,
-				1127823025B5C1BF0072F547 /* Info.plist */,
+				1127824825B5C2090072F547 /* SupportingFiles */,
+				1127824725B5C1FD0072F547 /* Services */,
+				1127824625B5C1EA0072F547 /* ViewModel */,
+				1127824525B5C1E60072F547 /* View */,
+				1127824425B5C1E10072F547 /* Model */,
 			);
 			path = TheOracle;
 			sourceTree = "<group>";
@@ -97,6 +99,50 @@
 				1127823B25B5C1BF0072F547 /* Info.plist */,
 			);
 			path = TheOracleTests;
+			sourceTree = "<group>";
+		};
+		1127824425B5C1E10072F547 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		1127824525B5C1E60072F547 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				1127822625B5C1BE0072F547 /* ViewController.swift */,
+				1127822825B5C1BE0072F547 /* Main.storyboard */,
+				1127822D25B5C1BF0072F547 /* LaunchScreen.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		1127824625B5C1EA0072F547 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		1127824725B5C1FD0072F547 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				1127824925B5C2AC0072F547 /* Network.swift */,
+				1127824B25B5C2B40072F547 /* DataSource.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		1127824825B5C2090072F547 /* SupportingFiles */ = {
+			isa = PBXGroup;
+			children = (
+				1127822225B5C1BE0072F547 /* AppDelegate.swift */,
+				1127822425B5C1BE0072F547 /* SceneDelegate.swift */,
+				1127822B25B5C1BF0072F547 /* Assets.xcassets */,
+				1127823025B5C1BF0072F547 /* Info.plist */,
+			);
+			path = SupportingFiles;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -202,6 +248,8 @@
 			files = (
 				1127822725B5C1BE0072F547 /* ViewController.swift in Sources */,
 				1127822325B5C1BE0072F547 /* AppDelegate.swift in Sources */,
+				1127824A25B5C2AC0072F547 /* Network.swift in Sources */,
+				1127824C25B5C2B40072F547 /* DataSource.swift in Sources */,
 				1127822525B5C1BE0072F547 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -364,7 +412,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = A3J488KW82;
-				INFOPLIST_FILE = TheOracle/Info.plist;
+				INFOPLIST_FILE = TheOracle/SupportingFiles/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -372,7 +420,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = pomappo.com.TheOracle;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -382,7 +430,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = A3J488KW82;
-				INFOPLIST_FILE = TheOracle/Info.plist;
+				INFOPLIST_FILE = TheOracle/SupportingFiles/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -390,7 +438,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = pomappo.com.TheOracle;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
