@@ -1,0 +1,6 @@
+framework module Pods_TheOracleTests {
+  umbrella header "Pods-TheOracleTests-umbrella.h"
+
+  export *
+  module * { export * }
+}

@@ -16,6 +16,10 @@
 		1127823A25B5C1BF0072F547 /* TheOracleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1127823925B5C1BF0072F547 /* TheOracleTests.swift */; };
 		1127824A25B5C2AC0072F547 /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1127824925B5C2AC0072F547 /* Network.swift */; };
 		1127824C25B5C2B40072F547 /* DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1127824B25B5C2B40072F547 /* DataSource.swift */; };
+		11935A2225BA13D900DA7673 /* Oracle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11935A2125BA13D900DA7673 /* Oracle.swift */; };
+		11935A2625BA202100DA7673 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 11935A2525BA202100DA7673 /* GoogleService-Info.plist */; };
+		55DDB071AD6F8B4FA5797E15 /* Pods_TheOracle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5D4C7E8FDDBD4C516C5C71C /* Pods_TheOracle.framework */; };
+		8F5E9002EE263B63F185339E /* Pods_TheOracleTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E12C94F3609E72F6BC49BDBD /* Pods_TheOracleTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,6 +46,14 @@
 		1127823B25B5C1BF0072F547 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1127824925B5C2AC0072F547 /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
 		1127824B25B5C2B40072F547 /* DataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataSource.swift; sourceTree = "<group>"; };
+		11935A2125BA13D900DA7673 /* Oracle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Oracle.swift; sourceTree = "<group>"; };
+		11935A2525BA202100DA7673 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		51280FE6DC848B650A9C5729 /* Pods-TheOracleTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TheOracleTests.debug.xcconfig"; path = "Target Support Files/Pods-TheOracleTests/Pods-TheOracleTests.debug.xcconfig"; sourceTree = "<group>"; };
+		7BC1B5010FEE74751326A75E /* Pods-TheOracle.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TheOracle.release.xcconfig"; path = "Target Support Files/Pods-TheOracle/Pods-TheOracle.release.xcconfig"; sourceTree = "<group>"; };
+		81F5832B5D52257967B8C8F6 /* Pods-TheOracle.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TheOracle.debug.xcconfig"; path = "Target Support Files/Pods-TheOracle/Pods-TheOracle.debug.xcconfig"; sourceTree = "<group>"; };
+		C836E32E4396FF6064D86EE8 /* Pods-TheOracleTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TheOracleTests.release.xcconfig"; path = "Target Support Files/Pods-TheOracleTests/Pods-TheOracleTests.release.xcconfig"; sourceTree = "<group>"; };
+		D5D4C7E8FDDBD4C516C5C71C /* Pods_TheOracle.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TheOracle.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E12C94F3609E72F6BC49BDBD /* Pods_TheOracleTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TheOracleTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -49,6 +61,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				55DDB071AD6F8B4FA5797E15 /* Pods_TheOracle.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -56,6 +69,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8F5E9002EE263B63F185339E /* Pods_TheOracleTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -68,6 +82,8 @@
 				1127822125B5C1BE0072F547 /* TheOracle */,
 				1127823825B5C1BF0072F547 /* TheOracleTests */,
 				1127822025B5C1BE0072F547 /* Products */,
+				168CEB87BBFBE5E18760E149 /* Pods */,
+				270D40B5834FDF6B40E364FA /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -104,6 +120,7 @@
 		1127824425B5C1E10072F547 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				11935A2125BA13D900DA7673 /* Oracle.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -137,12 +154,34 @@
 		1127824825B5C2090072F547 /* SupportingFiles */ = {
 			isa = PBXGroup;
 			children = (
+				11935A2525BA202100DA7673 /* GoogleService-Info.plist */,
 				1127822225B5C1BE0072F547 /* AppDelegate.swift */,
 				1127822425B5C1BE0072F547 /* SceneDelegate.swift */,
 				1127822B25B5C1BF0072F547 /* Assets.xcassets */,
 				1127823025B5C1BF0072F547 /* Info.plist */,
 			);
 			path = SupportingFiles;
+			sourceTree = "<group>";
+		};
+		168CEB87BBFBE5E18760E149 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				81F5832B5D52257967B8C8F6 /* Pods-TheOracle.debug.xcconfig */,
+				7BC1B5010FEE74751326A75E /* Pods-TheOracle.release.xcconfig */,
+				51280FE6DC848B650A9C5729 /* Pods-TheOracleTests.debug.xcconfig */,
+				C836E32E4396FF6064D86EE8 /* Pods-TheOracleTests.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		270D40B5834FDF6B40E364FA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D5D4C7E8FDDBD4C516C5C71C /* Pods_TheOracle.framework */,
+				E12C94F3609E72F6BC49BDBD /* Pods_TheOracleTests.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -152,9 +191,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1127823E25B5C1BF0072F547 /* Build configuration list for PBXNativeTarget "TheOracle" */;
 			buildPhases = (
+				525A98544C6D29B528EBB0E6 /* [CP] Check Pods Manifest.lock */,
 				1127821B25B5C1BE0072F547 /* Sources */,
 				1127821C25B5C1BE0072F547 /* Frameworks */,
 				1127821D25B5C1BE0072F547 /* Resources */,
+				D1237E03A19652B9238A157B /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -169,6 +210,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1127824125B5C1BF0072F547 /* Build configuration list for PBXNativeTarget "TheOracleTests" */;
 			buildPhases = (
+				0FDBBFA9D73DEA40DC7C7473 /* [CP] Check Pods Manifest.lock */,
 				1127823125B5C1BF0072F547 /* Sources */,
 				1127823225B5C1BF0072F547 /* Frameworks */,
 				1127823325B5C1BF0072F547 /* Resources */,
@@ -227,6 +269,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1127822F25B5C1BF0072F547 /* LaunchScreen.storyboard in Resources */,
+				11935A2625BA202100DA7673 /* GoogleService-Info.plist in Resources */,
 				1127822C25B5C1BF0072F547 /* Assets.xcassets in Resources */,
 				1127822A25B5C1BE0072F547 /* Main.storyboard in Resources */,
 			);
@@ -241,12 +284,77 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		0FDBBFA9D73DEA40DC7C7473 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-TheOracleTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		525A98544C6D29B528EBB0E6 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-TheOracle-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D1237E03A19652B9238A157B /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TheOracle/Pods-TheOracle-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TheOracle/Pods-TheOracle-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-TheOracle/Pods-TheOracle-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		1127821B25B5C1BE0072F547 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				1127822725B5C1BE0072F547 /* ViewController.swift in Sources */,
+				11935A2225BA13D900DA7673 /* Oracle.swift in Sources */,
 				1127822325B5C1BE0072F547 /* AppDelegate.swift in Sources */,
 				1127824A25B5C2AC0072F547 /* Network.swift in Sources */,
 				1127824C25B5C2B40072F547 /* DataSource.swift in Sources */,
@@ -408,6 +516,7 @@
 		};
 		1127823F25B5C1BF0072F547 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 81F5832B5D52257967B8C8F6 /* Pods-TheOracle.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -426,6 +535,7 @@
 		};
 		1127824025B5C1BF0072F547 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7BC1B5010FEE74751326A75E /* Pods-TheOracle.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -444,6 +554,7 @@
 		};
 		1127824225B5C1BF0072F547 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 51280FE6DC848B650A9C5729 /* Pods-TheOracleTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -466,6 +577,7 @@
 		};
 		1127824325B5C1BF0072F547 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C836E32E4396FF6064D86EE8 /* Pods-TheOracleTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
