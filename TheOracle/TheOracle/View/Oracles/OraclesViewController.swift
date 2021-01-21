@@ -19,6 +19,7 @@ class OraclesViewController: UIViewController {
         viewModel.delegate = self
         tableView.dataSource = self
         tableView.register(OracleTableViewCell.nib, forCellReuseIdentifier: OracleTableViewCell.reuseIdentifier)
+        let n = Network.shared
     }
 }
 
