@@ -46,7 +46,7 @@ extension OraclesViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if let cell = tableView.dequeueReusableCell(withIdentifier: OracleTableViewCell.reuseIdentifier)  as? OracleTableViewCell {
             let oracle = oracles[indexPath.row]
-            cell.title.text = oracle.title
+            cell.title.setAttributedText(oracle.title, strokeColor: .white, foregroundColor: .black, strokeWidth: -3, font: UIFont(name: "DIN Condensed Bold", size: 72) ?? .boldSystemFont(ofSize: 52))
             cell.backgroundImage.setImage(from: oracle.imageUrl)
             return cell
         }
@@ -58,5 +58,9 @@ extension OraclesViewController: UITableViewDataSource {
 extension OraclesViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return tableView.frame.height / 4
     }
 }
