@@ -10,7 +10,8 @@ import UIKit
 
 class OraclesViewController: UIViewController {
 
-    let viewModel = OraclesViewModel()
+    private let viewModel = OraclesViewModel()
+    private var oracles: [Oracle] = []
     
     @IBOutlet weak var tableView: UITableView!
     
@@ -18,27 +19,44 @@ class OraclesViewController: UIViewController {
         super.viewDidLoad()
         viewModel.delegate = self
         tableView.dataSource = self
+        tableView.delegate = self
         tableView.register(OracleTableViewCell.nib, forCellReuseIdentifier: OracleTableViewCell.reuseIdentifier)
-        let n = Network.shared
     }
 }
 
 
 extension OraclesViewController: OraclesViewModelDelegate {
+    func didFetch(oracles: [Oracle]) {
+        self.oracles = oracles
+        self.tableView.reloadData()
+    }
+    
+    func failToFetchOracles() {
+        print("Error to fetch oracles")
+    }
+    
     
 }
 
 extension OraclesViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return oracles.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if let cell = tableView.dequeueReusableCell(withIdentifier: OracleTableViewCell.reuseIdentifier) {
+        if let cell = tableView.dequeueReusableCell(withIdentifier: OracleTableViewCell.reuseIdentifier)  as? OracleTableViewCell {
+            let oracle = oracles[indexPath.row]
+            cell.title.text = oracle.title
+            cell.backgroundImage.setImage(from: oracle.imageUrl)
             return cell
         }
         return UITableViewCell()
     }
     
-    
+}
+
+extension OraclesViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+    }
 }

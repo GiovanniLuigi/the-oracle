@@ -30,6 +30,9 @@
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="infoLight" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kqc-0c-hZr">
                         <rect key="frame" x="283" y="12" width="25" height="24"/>
                         <color key="tintColor" systemColor="systemBlueColor"/>
+                        <connections>
+                            <action selector="didTapTooltip:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="KDz-Im-5JN"/>
+                        </connections>
                     </button>
                 </subviews>
                 <constraints>
@@ -45,6 +48,10 @@
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="backgroundImage" destination="X9Z-aF-UDQ" id="xeR-NB-pxN"/>
+                <outlet property="title" destination="UbU-9l-E6X" id="ubJ-DA-5e4"/>
+            </connections>
             <point key="canvasLocation" x="137.68115942028987" y="88.727678571428569"/>
         </tableViewCell>
     </objects>

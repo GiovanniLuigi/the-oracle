@@ -33,14 +33,18 @@ struct Network {
         
     }
     
-    func fetchOracles(completion: @escaping (Result<[Oracle], NetworkError>) -> Void) {
-        oraclesRef.observeSingleEvent(of: .value, with: { (snapshot) in
+    func observeOracles(completion: @escaping (Result<[Oracle], NetworkError>) -> Void) {
+        oraclesRef.observe(.value) { (snapshot) in
             if let oracles = snapshot.decode(type: [Oracle].self) {
-                completion(.success(oracles))
+                DispatchQueue.main.async {
+                    completion(.success(oracles))
+                }
             } else {
-                completion(.failure(.genericError))
+                DispatchQueue.main.async {
+                    completion(.failure(.genericError))
+                }
             }
-        })
+        }
     }
     
     

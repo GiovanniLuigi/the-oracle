@@ -9,10 +9,23 @@
 import Foundation
 
 protocol OraclesViewModelDelegate {
-    
+    func didFetch(oracles: [Oracle])
+    func failToFetchOracles()
 }
 
 
 class OraclesViewModel {
+    private var network = Network.shared
     var delegate: OraclesViewModelDelegate?
+    
+    init() {
+        network.observeOracles { [weak self] (result) in
+            switch result {
+            case .success(let oracles):
+                self?.delegate?.didFetch(oracles: oracles)
+            case .failure:
+                self?.delegate?.failToFetchOracles()
+            }
+        }
+    }
 }

@@ -16,6 +16,7 @@
 		1127823A25B5C1BF0072F547 /* TheOracleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1127823925B5C1BF0072F547 /* TheOracleTests.swift */; };
 		1127824A25B5C2AC0072F547 /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1127824925B5C2AC0072F547 /* Network.swift */; };
 		1127824C25B5C2B40072F547 /* DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1127824B25B5C2B40072F547 /* DataSource.swift */; };
+		117E5B1825BB7CA200B93E74 /* UIImageView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 117E5B1725BB7CA200B93E74 /* UIImageView+Extension.swift */; };
 		11935A2225BA13D900DA7673 /* Oracle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11935A2125BA13D900DA7673 /* Oracle.swift */; };
 		11935A2625BA202100DA7673 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 11935A2525BA202100DA7673 /* GoogleService-Info.plist */; };
 		11935A5525BA2B5000DA7673 /* OraclesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11935A5425BA2B5000DA7673 /* OraclesViewModel.swift */; };
@@ -50,6 +51,7 @@
 		1127823B25B5C1BF0072F547 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1127824925B5C2AC0072F547 /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
 		1127824B25B5C2B40072F547 /* DataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataSource.swift; sourceTree = "<group>"; };
+		117E5B1725BB7CA200B93E74 /* UIImageView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extension.swift"; sourceTree = "<group>"; };
 		11935A2125BA13D900DA7673 /* Oracle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Oracle.swift; sourceTree = "<group>"; };
 		11935A2525BA202100DA7673 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		11935A5425BA2B5000DA7673 /* OraclesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OraclesViewModel.swift; sourceTree = "<group>"; };
@@ -187,6 +189,7 @@
 			isa = PBXGroup;
 			children = (
 				11935A6025BA2F0E00DA7673 /* UITableViewCell+Extensions.swift */,
+				117E5B1725BB7CA200B93E74 /* UIImageView+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -388,6 +391,7 @@
 				11935A5525BA2B5000DA7673 /* OraclesViewModel.swift in Sources */,
 				11935A5B25BA2CAF00DA7673 /* OracleTableViewCell.swift in Sources */,
 				1127824C25B5C2B40072F547 /* DataSource.swift in Sources */,
+				117E5B1825BB7CA200B93E74 /* UIImageView+Extension.swift in Sources */,
 				1127822525B5C1BE0072F547 /* SceneDelegate.swift in Sources */,
 				11935A6125BA2F0E00DA7673 /* UITableViewCell+Extensions.swift in Sources */,
 			);
