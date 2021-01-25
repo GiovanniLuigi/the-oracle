@@ -19,6 +19,8 @@
 		117E5B1825BB7CA200B93E74 /* UIImageView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 117E5B1725BB7CA200B93E74 /* UIImageView+Extension.swift */; };
 		117E5B1E25BB823600B93E74 /* UILabel+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 117E5B1D25BB823600B93E74 /* UILabel+Extensions.swift */; };
 		117E5B2325BB83C700B93E74 /* FontConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 117E5B2225BB83C700B93E74 /* FontConstants.swift */; };
+		117E5B2725BEFA5000B93E74 /* OracleDetailModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 117E5B2625BEFA5000B93E74 /* OracleDetailModalViewController.swift */; };
+		117E5B2C25BEFEB600B93E74 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 117E5B2B25BEFEB600B93E74 /* CardView.swift */; };
 		11935A2225BA13D900DA7673 /* Oracle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11935A2125BA13D900DA7673 /* Oracle.swift */; };
 		11935A2625BA202100DA7673 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 11935A2525BA202100DA7673 /* GoogleService-Info.plist */; };
 		11935A5525BA2B5000DA7673 /* OraclesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11935A5425BA2B5000DA7673 /* OraclesViewModel.swift */; };
@@ -56,6 +58,8 @@
 		117E5B1725BB7CA200B93E74 /* UIImageView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extension.swift"; sourceTree = "<group>"; };
 		117E5B1D25BB823600B93E74 /* UILabel+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+Extensions.swift"; sourceTree = "<group>"; };
 		117E5B2225BB83C700B93E74 /* FontConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontConstants.swift; sourceTree = "<group>"; };
+		117E5B2625BEFA5000B93E74 /* OracleDetailModalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OracleDetailModalViewController.swift; sourceTree = "<group>"; };
+		117E5B2B25BEFEB600B93E74 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		11935A2125BA13D900DA7673 /* Oracle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Oracle.swift; sourceTree = "<group>"; };
 		11935A2525BA202100DA7673 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		11935A5425BA2B5000DA7673 /* OraclesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OraclesViewModel.swift; sourceTree = "<group>"; };
@@ -144,6 +148,7 @@
 		1127824525B5C1E60072F547 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				117E5B2A25BEFEA300B93E74 /* Common */,
 				11935A5825BA2C6600DA7673 /* Oracles */,
 				1127822825B5C1BE0072F547 /* Main.storyboard */,
 				1127822D25B5C1BF0072F547 /* LaunchScreen.storyboard */,
@@ -188,12 +193,21 @@
 			path = Utils;
 			sourceTree = "<group>";
 		};
+		117E5B2A25BEFEA300B93E74 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				117E5B2B25BEFEB600B93E74 /* CardView.swift */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
 		11935A5825BA2C6600DA7673 /* Oracles */ = {
 			isa = PBXGroup;
 			children = (
 				1127822625B5C1BE0072F547 /* OraclesViewController.swift */,
 				11935A5925BA2CAF00DA7673 /* OracleTableViewCell.swift */,
 				11935A5A25BA2CAF00DA7673 /* OracleTableViewCell.xib */,
+				117E5B2625BEFA5000B93E74 /* OracleDetailModalViewController.swift */,
 			);
 			path = Oracles;
 			sourceTree = "<group>";
@@ -398,7 +412,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				117E5B2C25BEFEB600B93E74 /* CardView.swift in Sources */,
 				1127822725B5C1BE0072F547 /* OraclesViewController.swift in Sources */,
+				117E5B2725BEFA5000B93E74 /* OracleDetailModalViewController.swift in Sources */,
 				11935A2225BA13D900DA7673 /* Oracle.swift in Sources */,
 				117E5B1E25BB823600B93E74 /* UILabel+Extensions.swift in Sources */,
 				1127822325B5C1BE0072F547 /* AppDelegate.swift in Sources */,

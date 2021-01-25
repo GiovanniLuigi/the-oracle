@@ -10,7 +10,7 @@ import UIKit
 
 extension UILabel {
     
-    func setAttributedText(_ text: String, strokeColor: UIColor, foregroundColor: UIColor, strokeWidth: Float, font: UIFont) {
+    func setAttributedText(_ text: String, strokeColor: UIColor = .white, foregroundColor: UIColor = .blue, strokeWidth: Float = -3, font: UIFont = UIFont(name: "DIN Condensed Bold", size: 72) ?? .boldSystemFont(ofSize: 52)) {
         attributedText = NSAttributedString(string: text, attributes: [
             NSAttributedString.Key.strokeColor: strokeColor,
             NSAttributedString.Key.foregroundColor: foregroundColor,
