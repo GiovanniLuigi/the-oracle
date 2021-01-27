@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		1127822325B5C1BE0072F547 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1127822225B5C1BE0072F547 /* AppDelegate.swift */; };
 		1127822525B5C1BE0072F547 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1127822425B5C1BE0072F547 /* SceneDelegate.swift */; };
-		1127822725B5C1BE0072F547 /* OraclesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1127822625B5C1BE0072F547 /* OraclesViewController.swift */; };
 		1127822A25B5C1BE0072F547 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1127822825B5C1BE0072F547 /* Main.storyboard */; };
 		1127822C25B5C1BF0072F547 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1127822B25B5C1BF0072F547 /* Assets.xcassets */; };
 		1127822F25B5C1BF0072F547 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1127822D25B5C1BF0072F547 /* LaunchScreen.storyboard */; };
@@ -31,6 +30,8 @@
 		119B5F3A25C20C9300ECBFF7 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 119B5F3925C20C9300ECBFF7 /* Coordinator.swift */; };
 		119B5F4625C20EF000ECBFF7 /* OracleListCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 119B5F4525C20EF000ECBFF7 /* OracleListCoordinator.swift */; };
 		119B5F4A25C20F5D00ECBFF7 /* Storyboarded.swift in Sources */ = {isa = PBXBuildFile; fileRef = 119B5F4925C20F5D00ECBFF7 /* Storyboarded.swift */; };
+		119B5F5125C2114900ECBFF7 /* OracleListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 119B5F4F25C2114900ECBFF7 /* OracleListViewController.swift */; };
+		119B5F5225C2114900ECBFF7 /* OracleListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 119B5F5025C2114900ECBFF7 /* OracleListViewController.xib */; };
 		55DDB071AD6F8B4FA5797E15 /* Pods_TheOracle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5D4C7E8FDDBD4C516C5C71C /* Pods_TheOracle.framework */; };
 		8F5E9002EE263B63F185339E /* Pods_TheOracleTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E12C94F3609E72F6BC49BDBD /* Pods_TheOracleTests.framework */; };
 /* End PBXBuildFile section */
@@ -49,7 +50,6 @@
 		1127821F25B5C1BE0072F547 /* TheOracle.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TheOracle.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1127822225B5C1BE0072F547 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1127822425B5C1BE0072F547 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		1127822625B5C1BE0072F547 /* OraclesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OraclesViewController.swift; sourceTree = "<group>"; };
 		1127822925B5C1BE0072F547 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		1127822B25B5C1BF0072F547 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1127822E25B5C1BF0072F547 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -74,6 +74,8 @@
 		119B5F3925C20C9300ECBFF7 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		119B5F4525C20EF000ECBFF7 /* OracleListCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OracleListCoordinator.swift; sourceTree = "<group>"; };
 		119B5F4925C20F5D00ECBFF7 /* Storyboarded.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storyboarded.swift; sourceTree = "<group>"; };
+		119B5F4F25C2114900ECBFF7 /* OracleListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OracleListViewController.swift; sourceTree = "<group>"; };
+		119B5F5025C2114900ECBFF7 /* OracleListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OracleListViewController.xib; sourceTree = "<group>"; };
 		51280FE6DC848B650A9C5729 /* Pods-TheOracleTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TheOracleTests.debug.xcconfig"; path = "Target Support Files/Pods-TheOracleTests/Pods-TheOracleTests.debug.xcconfig"; sourceTree = "<group>"; };
 		7BC1B5010FEE74751326A75E /* Pods-TheOracle.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TheOracle.release.xcconfig"; path = "Target Support Files/Pods-TheOracle/Pods-TheOracle.release.xcconfig"; sourceTree = "<group>"; };
 		81F5832B5D52257967B8C8F6 /* Pods-TheOracle.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TheOracle.debug.xcconfig"; path = "Target Support Files/Pods-TheOracle/Pods-TheOracle.debug.xcconfig"; sourceTree = "<group>"; };
@@ -158,7 +160,7 @@
 			isa = PBXGroup;
 			children = (
 				117E5B2A25BEFEA300B93E74 /* Common */,
-				11935A5825BA2C6600DA7673 /* Oracles */,
+				11935A5825BA2C6600DA7673 /* OracleList */,
 				1127822825B5C1BE0072F547 /* Main.storyboard */,
 				1127822D25B5C1BF0072F547 /* LaunchScreen.storyboard */,
 			);
@@ -211,15 +213,16 @@
 			path = Common;
 			sourceTree = "<group>";
 		};
-		11935A5825BA2C6600DA7673 /* Oracles */ = {
+		11935A5825BA2C6600DA7673 /* OracleList */ = {
 			isa = PBXGroup;
 			children = (
-				1127822625B5C1BE0072F547 /* OraclesViewController.swift */,
 				11935A5925BA2CAF00DA7673 /* OracleTableViewCell.swift */,
 				11935A5A25BA2CAF00DA7673 /* OracleTableViewCell.xib */,
 				117E5B2625BEFA5000B93E74 /* OracleDetailModalViewController.swift */,
+				119B5F4F25C2114900ECBFF7 /* OracleListViewController.swift */,
+				119B5F5025C2114900ECBFF7 /* OracleListViewController.xib */,
 			);
-			path = Oracles;
+			path = OracleList;
 			sourceTree = "<group>";
 		};
 		11935A5F25BA2EFB00DA7673 /* Extensions */ = {
@@ -346,6 +349,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				119B5F5225C2114900ECBFF7 /* OracleListViewController.xib in Resources */,
 				1127822F25B5C1BF0072F547 /* LaunchScreen.storyboard in Resources */,
 				11935A2625BA202100DA7673 /* GoogleService-Info.plist in Resources */,
 				1127822C25B5C1BF0072F547 /* Assets.xcassets in Resources */,
@@ -434,10 +438,10 @@
 			files = (
 				119B5F3A25C20C9300ECBFF7 /* Coordinator.swift in Sources */,
 				117E5B2C25BEFEB600B93E74 /* CardView.swift in Sources */,
-				1127822725B5C1BE0072F547 /* OraclesViewController.swift in Sources */,
 				117E5B2725BEFA5000B93E74 /* OracleDetailModalViewController.swift in Sources */,
 				11935A2225BA13D900DA7673 /* Oracle.swift in Sources */,
 				119B5F4A25C20F5D00ECBFF7 /* Storyboarded.swift in Sources */,
+				119B5F5125C2114900ECBFF7 /* OracleListViewController.swift in Sources */,
 				117E5B1E25BB823600B93E74 /* UILabel+Extensions.swift in Sources */,
 				119B5F4625C20EF000ECBFF7 /* OracleListCoordinator.swift in Sources */,
 				1127822325B5C1BE0072F547 /* AppDelegate.swift in Sources */,

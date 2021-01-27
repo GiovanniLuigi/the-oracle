@@ -8,15 +8,15 @@
 
 import Foundation
 
-protocol OraclesViewModelDelegate {
+protocol OracleListViewModelDelegate {
     func didFetch(oracles: [Oracle])
     func failToFetchOracles()
 }
 
 
-class OraclesViewModel {
+class OracleListViewModel {
     private var network = Network.shared
-    var delegate: OraclesViewModelDelegate?
+    var delegate: OracleListViewModelDelegate?
     
     init() {
         network.observeOracles { [weak self] (result) in

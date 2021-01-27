@@ -1,14 +1,14 @@
 //
-//  ViewController.swift
+//  OracleListViewController.swift
 //  TheOracle
 //
-//  Created by Giovanni Luidi Bruno on 18/01/21.
+//  Created by Giovanni Luidi Bruno on 27/01/21.
 //  Copyright © 2021 Giovanni Luigi Bruno. All rights reserved.
 //
 
 import UIKit
 
-class OraclesViewController: UIViewController {
+class OracleListViewController: UIViewController {
     
     private let viewModel = OraclesViewModel()
     private var oracles: [Oracle] = []
@@ -34,7 +34,7 @@ class OraclesViewController: UIViewController {
 }
 
 
-extension OraclesViewController: OraclesViewModelDelegate {
+extension OracleListViewController: OraclesViewModelDelegate {
     func didFetch(oracles: [Oracle]) {
         self.oracles = oracles
         self.tableView.reloadData()
@@ -45,7 +45,7 @@ extension OraclesViewController: OraclesViewModelDelegate {
     }
 }
 
-extension OraclesViewController: UITableViewDataSource {
+extension OracleListViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return oracles.count
     }
@@ -67,7 +67,7 @@ extension OraclesViewController: UITableViewDataSource {
     
 }
 
-extension OraclesViewController: UITableViewDelegate {
+extension OracleListViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
     }
