@@ -10,7 +10,7 @@ import UIKit
 
 class OracleListViewController: UIViewController {
     
-    private let viewModel = OraclesViewModel()
+    private let viewModel = OracleListViewModel()
     private var oracles: [Oracle] = []
     private var selectedIndex: Int?
     
@@ -18,6 +18,9 @@ class OracleListViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        title = "Oracles"
+//        navigationController?.navigationBar.prefersLargeTitles = true
+        
         viewModel.delegate = self
         tableView.dataSource = self
         tableView.delegate = self
@@ -34,7 +37,7 @@ class OracleListViewController: UIViewController {
 }
 
 
-extension OracleListViewController: OraclesViewModelDelegate {
+extension OracleListViewController: OracleListViewModelDelegate {
     func didFetch(oracles: [Oracle]) {
         self.oracles = oracles
         self.tableView.reloadData()

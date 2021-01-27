@@ -19,6 +19,7 @@ final class OracleListCoordinator: Coordinator {
     }
     
     func start() {
-        
+        let oracleListViewController = OracleListViewController.instantiate()
+        navigationController.setViewControllers([oracleListViewController], animated: false)
     }
 }

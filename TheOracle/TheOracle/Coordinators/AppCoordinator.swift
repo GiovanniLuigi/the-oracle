@@ -19,6 +19,12 @@ final class AppCoordinator: Coordinator {
     
     func start() {
         let navigationController = UINavigationController()
+        
+        let oracleListCoordinator = OracleListCoordinator(navigationController: navigationController)
+        oracleListCoordinator.start()
+        
+        childCoordinators.append(oracleListCoordinator)
+        
         window.rootViewController = navigationController
         window.makeKeyAndVisible()
     }
