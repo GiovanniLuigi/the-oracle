@@ -8,10 +8,12 @@
 
 import UIKit
 
-class OracleDetailModalViewController: UIViewController {
-    @IBOutlet weak var modalCard: UIView!
+class OracleDetailViewController: UIViewController {
+    @IBOutlet weak var modalCard: CardView!
     @IBOutlet weak var cardTitle: UILabel!
     @IBOutlet weak var cardDescription: UILabel!
+    
+    var viewModel : OracleCellViewModel!
     
     private let blurEffectView = UIVisualEffectView()
     
@@ -20,6 +22,9 @@ class OracleDetailModalViewController: UIViewController {
         
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(didTapView))
         view.addGestureRecognizer(tapGesture)
+        
+        cardTitle.text = viewModel.title
+        cardDescription.text = viewModel.description
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -35,6 +40,11 @@ class OracleDetailModalViewController: UIViewController {
             self?.blurEffectView.effect = UIBlurEffect(style: .extraLight)
         }
     }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        viewModel.viewDidDisappear()
+    }
 
     @objc private func didTapView(_ sender: UITapGestureRecognizer) {
         guard sender.state == .ended else {return}
@@ -48,15 +58,4 @@ class OracleDetailModalViewController: UIViewController {
             }
         }
     }
-    
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destination.
-     // Pass the selected object to the new view controller.
-     }
-     */
-    
 }

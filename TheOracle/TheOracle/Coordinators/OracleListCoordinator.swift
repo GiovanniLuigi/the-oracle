@@ -24,9 +24,17 @@ final class OracleListCoordinator: Coordinator {
         navigationController.setViewControllers([oracleListViewController], animated: false)
     }
     
-    func startOracleDetail() {
-        let oracleDetailCoordinator = OracleDetailCoordinator()
+    func startOracleDetail(viewModel: OracleCellViewModel) {
+        let oracleDetailCoordinator = OracleDetailCoordinator(navigationController: navigationController, viewModel: viewModel, parentCoordinator: self)
         childCoordinators.append(oracleDetailCoordinator)
         oracleDetailCoordinator.start()
+    }
+    
+    func didFinish(childCoordinator: Coordinator) {
+        if let index = childCoordinators.firstIndex { coordinator -> Bool in
+            return coordinator === childCoordinator
+        } {
+            
+        }
     }
 }

@@ -8,7 +8,7 @@
 
 import Foundation
 
-protocol Coordinator {
+protocol Coordinator: class {
     var childCoordinators: [Coordinator] {get}
     func start()
 }

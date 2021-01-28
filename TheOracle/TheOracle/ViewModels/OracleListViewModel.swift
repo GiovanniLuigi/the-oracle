@@ -41,6 +41,6 @@ final class OracleListViewModel {
     
     func cellViewModel(for row: Int) -> OracleCellViewModel {
         let oracle = oracles[row]
-        return OracleCellViewModel(title: oracle.title, imageName: oracle.imageURL, coordinator: coordinator)
+        return OracleCellViewModel(title: oracle.title, imageName: oracle.imageURL, description: oracle.description, coordinator: coordinator)
     }
 }

@@ -12,12 +12,14 @@ import Foundation
 final class OracleCellViewModel {
     let title: String
     let imageURL: String
+    let description: String
     let coordinator: OracleListCoordinator
     
-    init(title: String, imageName: String, coordinator: OracleListCoordinator) {
+    init(title: String, imageName: String, description: String, coordinator: OracleListCoordinator) {
         self.coordinator = coordinator
         self.title = title
         self.imageURL = imageName
+        self.description = description
     }
     
     func didTapCell() {
@@ -25,6 +27,10 @@ final class OracleCellViewModel {
     }
     
     func didTapToolTip() {
-        print("ToolTip")
+        coordinator.startOracleDetail(viewModel: self)
+    }
+    
+    func viewDidDisappear() {
+        
     }
 }
