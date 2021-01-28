@@ -10,16 +10,13 @@ import UIKit
 
 class OracleListViewController: UIViewController {
     
-    private let viewModel = OracleListViewModel()
-    private var oracles: [Oracle] = []
-    private var selectedIndex: Int?
-    
     @IBOutlet weak var tableView: UITableView!
+    
+    var viewModel: OracleListViewModel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "Oracles"
-//        navigationController?.navigationBar.prefersLargeTitles = true
+        title = viewModel.title
         
         viewModel.delegate = self
         tableView.dataSource = self
@@ -27,20 +24,13 @@ class OracleListViewController: UIViewController {
         tableView.register(OracleTableViewCell.nib, forCellReuseIdentifier: OracleTableViewCell.reuseIdentifier)
     }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let vc = segue.destination as? OracleDetailModalViewController, let index = selectedIndex {
-            let oracle = oracles[index]
-            vc.cardTitle.text = oracle.title
-            vc.cardDescription.text = oracle.rules
-        }
-    }
 }
 
 
 extension OracleListViewController: OracleListViewModelDelegate {
-    func didFetch(oracles: [Oracle]) {
-        self.oracles = oracles
-        self.tableView.reloadData()
+    
+    func didFetchFetchOracles() {
+        tableView.reloadData()
     }
     
     func failToFetchOracles() {
@@ -50,19 +40,13 @@ extension OracleListViewController: OracleListViewModelDelegate {
 
 extension OracleListViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return oracles.count
+        return viewModel.numberOfRows
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if let cell = tableView.dequeueReusableCell(withIdentifier: OracleTableViewCell.reuseIdentifier)  as? OracleTableViewCell {
-            let oracle = oracles[indexPath.row]
-            cell.title.setAttributedText(oracle.title, strokeColor: .white, foregroundColor: .black, strokeWidth: -3, font: UIFont(name: "DIN Condensed Bold", size: 72) ?? .boldSystemFont(ofSize: 52))
-            cell.backgroundImage.setImage(from: oracle.imageUrl)
-            cell.tooltipCompletion = { [weak self] in
-                self?.selectedIndex = indexPath.row
-                self?.performSegue(withIdentifier: "tooltip", sender: self)
-            }
-            
+            let cellViewModel = viewModel.cellViewModel(for: indexPath.row)
+            cell.update(with: cellViewModel)
             return cell
         }
         return UITableViewCell()
@@ -72,7 +56,10 @@ extension OracleListViewController: UITableViewDataSource {
 
 extension OracleListViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        tableView.deselectRow(at: indexPath, animated: true)
+        defer {
+            tableView.deselectRow(at: indexPath, animated: true)
+        }
+        print("sdas")
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {

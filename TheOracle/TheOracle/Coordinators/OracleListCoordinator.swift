@@ -20,6 +20,13 @@ final class OracleListCoordinator: Coordinator {
     
     func start() {
         let oracleListViewController = OracleListViewController.instantiate()
+        oracleListViewController.viewModel = OracleListViewModel(coordinator: self)
         navigationController.setViewControllers([oracleListViewController], animated: false)
+    }
+    
+    func startOracleDetail() {
+        let oracleDetailCoordinator = OracleDetailCoordinator()
+        childCoordinators.append(oracleDetailCoordinator)
+        oracleDetailCoordinator.start()
     }
 }

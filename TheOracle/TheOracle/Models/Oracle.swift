@@ -11,6 +11,6 @@ import Foundation
 
 struct Oracle: Codable {
     let title: String
-    let imageUrl: String
-    let rules: String
+    let imageURL: String
+    let description: String
 }
