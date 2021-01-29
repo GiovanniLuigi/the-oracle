@@ -48,12 +48,8 @@ final class OracleListViewModel {
         coordinator.startOracleDetail(viewModel: viewModel)
     }
     
-    private func finishTooltip() {
-        
-    }
-    
     func didTapCell(at row: Int) {
-        print("didTapCell at \(row)")
+        coordinator.startOracleGameStepOne()
     }
     
 }

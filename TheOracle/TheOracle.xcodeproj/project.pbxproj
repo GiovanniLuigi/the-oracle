@@ -33,6 +33,10 @@
 		119B5F5225C2114900ECBFF7 /* OracleListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 119B5F5025C2114900ECBFF7 /* OracleListViewController.xib */; };
 		119B5F5A25C2144C00ECBFF7 /* UIViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 119B5F5925C2144C00ECBFF7 /* UIViewController+Extensions.swift */; };
 		11AA71FF25C44BDC00A3185C /* OracleDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11AA71FE25C44BDC00A3185C /* OracleDetailViewModel.swift */; };
+		11AA720525C4505500A3185C /* OracleGameStepOneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11AA720325C4505500A3185C /* OracleGameStepOneViewController.swift */; };
+		11AA720625C4505500A3185C /* OracleGameStepOneViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 11AA720425C4505500A3185C /* OracleGameStepOneViewController.xib */; };
+		11AA720C25C4506B00A3185C /* OracleGameStepOneCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11AA720B25C4506B00A3185C /* OracleGameStepOneCoordinator.swift */; };
+		11AA721025C450EE00A3185C /* OracleGameStepOneViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11AA720F25C450EE00A3185C /* OracleGameStepOneViewModel.swift */; };
 		11D0C0E425C36BA2008C34D7 /* OracleCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D0C0E325C36BA2008C34D7 /* OracleCellViewModel.swift */; };
 		11D0C0EA25C36D7A008C34D7 /* OracleDetailCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D0C0E925C36D7A008C34D7 /* OracleDetailCoordinator.swift */; };
 		11D0C0F425C376A4008C34D7 /* OracleDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 11D0C0F325C376A4008C34D7 /* OracleDetailViewController.xib */; };
@@ -81,6 +85,10 @@
 		119B5F5025C2114900ECBFF7 /* OracleListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OracleListViewController.xib; sourceTree = "<group>"; };
 		119B5F5925C2144C00ECBFF7 /* UIViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extensions.swift"; sourceTree = "<group>"; };
 		11AA71FE25C44BDC00A3185C /* OracleDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OracleDetailViewModel.swift; sourceTree = "<group>"; };
+		11AA720325C4505500A3185C /* OracleGameStepOneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OracleGameStepOneViewController.swift; sourceTree = "<group>"; };
+		11AA720425C4505500A3185C /* OracleGameStepOneViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OracleGameStepOneViewController.xib; sourceTree = "<group>"; };
+		11AA720B25C4506B00A3185C /* OracleGameStepOneCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OracleGameStepOneCoordinator.swift; sourceTree = "<group>"; };
+		11AA720F25C450EE00A3185C /* OracleGameStepOneViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OracleGameStepOneViewModel.swift; sourceTree = "<group>"; };
 		11D0C0E325C36BA2008C34D7 /* OracleCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OracleCellViewModel.swift; sourceTree = "<group>"; };
 		11D0C0E925C36D7A008C34D7 /* OracleDetailCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OracleDetailCoordinator.swift; sourceTree = "<group>"; };
 		11D0C0F325C376A4008C34D7 /* OracleDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OracleDetailViewController.xib; sourceTree = "<group>"; };
@@ -167,6 +175,7 @@
 		1127824525B5C1E60072F547 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				11AA720225C44FE400A3185C /* OracleGameStepOne */,
 				11D0C0E025C36B65008C34D7 /* OracleDetail */,
 				117E5B2A25BEFEA300B93E74 /* Common */,
 				11935A5825BA2C6600DA7673 /* OracleList */,
@@ -181,6 +190,7 @@
 				11935A5425BA2B5000DA7673 /* OracleListViewModel.swift */,
 				11D0C0E325C36BA2008C34D7 /* OracleCellViewModel.swift */,
 				11AA71FE25C44BDC00A3185C /* OracleDetailViewModel.swift */,
+				11AA720F25C450EE00A3185C /* OracleGameStepOneViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -252,8 +262,18 @@
 				119B5F3925C20C9300ECBFF7 /* Coordinator.swift */,
 				119B5F4525C20EF000ECBFF7 /* OracleListCoordinator.swift */,
 				11D0C0E925C36D7A008C34D7 /* OracleDetailCoordinator.swift */,
+				11AA720B25C4506B00A3185C /* OracleGameStepOneCoordinator.swift */,
 			);
 			path = Coordinators;
+			sourceTree = "<group>";
+		};
+		11AA720225C44FE400A3185C /* OracleGameStepOne */ = {
+			isa = PBXGroup;
+			children = (
+				11AA720325C4505500A3185C /* OracleGameStepOneViewController.swift */,
+				11AA720425C4505500A3185C /* OracleGameStepOneViewController.xib */,
+			);
+			path = OracleGameStepOne;
 			sourceTree = "<group>";
 		};
 		11D0C0E025C36B65008C34D7 /* OracleDetail */ = {
@@ -373,6 +393,7 @@
 				11D0C0F425C376A4008C34D7 /* OracleDetailViewController.xib in Resources */,
 				1127822F25B5C1BF0072F547 /* LaunchScreen.storyboard in Resources */,
 				11935A2625BA202100DA7673 /* GoogleService-Info.plist in Resources */,
+				11AA720625C4505500A3185C /* OracleGameStepOneViewController.xib in Resources */,
 				1127822C25B5C1BF0072F547 /* Assets.xcassets in Resources */,
 				11935A5C25BA2CAF00DA7673 /* OracleTableViewCell.xib in Resources */,
 			);
@@ -457,6 +478,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				119B5F3A25C20C9300ECBFF7 /* Coordinator.swift in Sources */,
+				11AA720525C4505500A3185C /* OracleGameStepOneViewController.swift in Sources */,
 				117E5B2C25BEFEB600B93E74 /* CardView.swift in Sources */,
 				117E5B2725BEFA5000B93E74 /* OracleDetailViewController.swift in Sources */,
 				11935A2225BA13D900DA7673 /* Oracle.swift in Sources */,
@@ -466,9 +488,11 @@
 				117E5B1E25BB823600B93E74 /* UILabel+Extensions.swift in Sources */,
 				119B5F4625C20EF000ECBFF7 /* OracleListCoordinator.swift in Sources */,
 				1127822325B5C1BE0072F547 /* AppDelegate.swift in Sources */,
+				11AA720C25C4506B00A3185C /* OracleGameStepOneCoordinator.swift in Sources */,
 				1127824A25B5C2AC0072F547 /* Network.swift in Sources */,
 				11935A5525BA2B5000DA7673 /* OracleListViewModel.swift in Sources */,
 				11D0C0EA25C36D7A008C34D7 /* OracleDetailCoordinator.swift in Sources */,
+				11AA721025C450EE00A3185C /* OracleGameStepOneViewModel.swift in Sources */,
 				117E5B2325BB83C700B93E74 /* FontConstants.swift in Sources */,
 				11935A5B25BA2CAF00DA7673 /* OracleTableViewCell.swift in Sources */,
 				1127824C25B5C2B40072F547 /* DataSource.swift in Sources */,

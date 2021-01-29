@@ -30,10 +30,16 @@ final class OracleListCoordinator: Coordinator {
         oracleDetailCoordinator.start()
     }
     
+    func startOracleGameStepOne() {
+        let oracleGameStepOneCoordinator = OracleGameStepOneCoordinator(navigationController: navigationController)
+        childCoordinators.append(oracleGameStepOneCoordinator)
+        oracleGameStepOneCoordinator.start()
+    }
+    
     func didFinish(childCoordinator: Coordinator) {
-        if let index = childCoordinators.firstIndex { coordinator -> Bool in
+        if let index = childCoordinators.firstIndex(where: { coordinator -> Bool in
             return coordinator === childCoordinator
-        } {
+        }) {
             childCoordinators.remove(at: index)
         }
     }

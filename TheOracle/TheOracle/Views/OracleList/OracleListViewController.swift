@@ -59,7 +59,7 @@ extension OracleListViewController: UITableViewDelegate {
         defer {
             tableView.deselectRow(at: indexPath, animated: true)
         }
-        print("sdas")
+        viewModel.didTapCell(at: indexPath.row)
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
