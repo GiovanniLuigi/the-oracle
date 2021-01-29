@@ -32,6 +32,7 @@
 		119B5F5125C2114900ECBFF7 /* OracleListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 119B5F4F25C2114900ECBFF7 /* OracleListViewController.swift */; };
 		119B5F5225C2114900ECBFF7 /* OracleListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 119B5F5025C2114900ECBFF7 /* OracleListViewController.xib */; };
 		119B5F5A25C2144C00ECBFF7 /* UIViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 119B5F5925C2144C00ECBFF7 /* UIViewController+Extensions.swift */; };
+		11AA71FF25C44BDC00A3185C /* OracleDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11AA71FE25C44BDC00A3185C /* OracleDetailViewModel.swift */; };
 		11D0C0E425C36BA2008C34D7 /* OracleCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D0C0E325C36BA2008C34D7 /* OracleCellViewModel.swift */; };
 		11D0C0EA25C36D7A008C34D7 /* OracleDetailCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D0C0E925C36D7A008C34D7 /* OracleDetailCoordinator.swift */; };
 		11D0C0F425C376A4008C34D7 /* OracleDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 11D0C0F325C376A4008C34D7 /* OracleDetailViewController.xib */; };
@@ -79,6 +80,7 @@
 		119B5F4F25C2114900ECBFF7 /* OracleListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OracleListViewController.swift; sourceTree = "<group>"; };
 		119B5F5025C2114900ECBFF7 /* OracleListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OracleListViewController.xib; sourceTree = "<group>"; };
 		119B5F5925C2144C00ECBFF7 /* UIViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extensions.swift"; sourceTree = "<group>"; };
+		11AA71FE25C44BDC00A3185C /* OracleDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OracleDetailViewModel.swift; sourceTree = "<group>"; };
 		11D0C0E325C36BA2008C34D7 /* OracleCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OracleCellViewModel.swift; sourceTree = "<group>"; };
 		11D0C0E925C36D7A008C34D7 /* OracleDetailCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OracleDetailCoordinator.swift; sourceTree = "<group>"; };
 		11D0C0F325C376A4008C34D7 /* OracleDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OracleDetailViewController.xib; sourceTree = "<group>"; };
@@ -178,6 +180,7 @@
 			children = (
 				11935A5425BA2B5000DA7673 /* OracleListViewModel.swift */,
 				11D0C0E325C36BA2008C34D7 /* OracleCellViewModel.swift */,
+				11AA71FE25C44BDC00A3185C /* OracleDetailViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -472,6 +475,7 @@
 				117E5B1825BB7CA200B93E74 /* UIImageView+Extension.swift in Sources */,
 				119B5F3425C20C8100ECBFF7 /* AppCoordinator.swift in Sources */,
 				1127822525B5C1BE0072F547 /* SceneDelegate.swift in Sources */,
+				11AA71FF25C44BDC00A3185C /* OracleDetailViewModel.swift in Sources */,
 				11D0C0E425C36BA2008C34D7 /* OracleCellViewModel.swift in Sources */,
 				11935A6125BA2F0E00DA7673 /* UITableViewCell+Extensions.swift in Sources */,
 			);

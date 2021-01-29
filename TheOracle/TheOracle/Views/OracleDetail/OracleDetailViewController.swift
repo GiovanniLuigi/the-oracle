@@ -13,7 +13,7 @@ class OracleDetailViewController: UIViewController {
     @IBOutlet weak var cardTitle: UILabel!
     @IBOutlet weak var cardDescription: UILabel!
     
-    var viewModel : OracleCellViewModel!
+    var viewModel : OracleDetailViewModel!
     
     private let blurEffectView = UIVisualEffectView()
     
@@ -58,4 +58,5 @@ class OracleDetailViewController: UIViewController {
             }
         }
     }
+    
 }

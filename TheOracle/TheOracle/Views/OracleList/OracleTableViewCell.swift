@@ -15,14 +15,13 @@ class OracleTableViewCell: UITableViewCell {
     private var viewModel: OracleCellViewModel?
     
     @IBAction func didTapTooltip(_ sender: Any) {
-        viewModel?.didTapToolTip()
+        viewModel?.tapTooltip()
     }
     
     func update(with viewModel: OracleCellViewModel) {
         self.viewModel = viewModel
         title.setAttributedText(viewModel.title, strokeColor: .white, foregroundColor: .black, strokeWidth: -3, font: UIFont(name: "DIN Condensed Bold", size: 72) ?? .boldSystemFont(ofSize: 52))
         backgroundImage.setImage(from: viewModel.imageURL)
-        
     }
     
 }

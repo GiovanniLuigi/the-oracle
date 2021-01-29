@@ -9,28 +9,21 @@
 import Foundation
 
 
-final class OracleCellViewModel {
+struct OracleCellViewModel {
     let title: String
     let imageURL: String
     let description: String
-    let coordinator: OracleListCoordinator
+    private let startTooltip: (OracleCellViewModel) -> Void
     
-    init(title: String, imageName: String, description: String, coordinator: OracleListCoordinator) {
-        self.coordinator = coordinator
+    init(title: String, imageName: String, description: String, startTooltip: @escaping (OracleCellViewModel) -> Void) {
         self.title = title
         self.imageURL = imageName
         self.description = description
+        self.startTooltip = startTooltip
     }
     
-    func didTapCell() {
-        
+    func tapTooltip() {
+        startTooltip(self)
     }
     
-    func didTapToolTip() {
-        coordinator.startOracleDetail(viewModel: self)
-    }
-    
-    func viewDidDisappear() {
-        
-    }
 }

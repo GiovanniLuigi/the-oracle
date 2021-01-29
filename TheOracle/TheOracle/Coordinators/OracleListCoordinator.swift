@@ -34,7 +34,7 @@ final class OracleListCoordinator: Coordinator {
         if let index = childCoordinators.firstIndex { coordinator -> Bool in
             return coordinator === childCoordinator
         } {
-            
+            childCoordinators.remove(at: index)
         }
     }
 }

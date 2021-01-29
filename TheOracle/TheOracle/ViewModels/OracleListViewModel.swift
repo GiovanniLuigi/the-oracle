@@ -41,6 +41,19 @@ final class OracleListViewModel {
     
     func cellViewModel(for row: Int) -> OracleCellViewModel {
         let oracle = oracles[row]
-        return OracleCellViewModel(title: oracle.title, imageName: oracle.imageURL, description: oracle.description, coordinator: coordinator)
+        return OracleCellViewModel(title: oracle.title, imageName: oracle.imageURL, description: oracle.description, startTooltip: startTooltop)
     }
+    
+    private func startTooltop(viewModel: OracleCellViewModel) {
+        coordinator.startOracleDetail(viewModel: viewModel)
+    }
+    
+    private func finishTooltip() {
+        
+    }
+    
+    func didTapCell(at row: Int) {
+        print("didTapCell at \(row)")
+    }
+    
 }
