@@ -11,5 +11,6 @@ import UIKit
 
 struct OracleGameStepOneViewModel {
 //    let cardLogoURL: String
-//    let description: String
+//    let preparationDescription: String
+//    let title: String
 }
