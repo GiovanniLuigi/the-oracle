@@ -16,8 +16,9 @@ class OracleGameStepOneViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "Oracle Step One"
-        
+        title = viewModel.title
+        oracleImageView.setImage(from: viewModel.cardLogoURL)
+        preparationDescription.text = viewModel.preparationDescription
     }
     
     @IBAction func didTapStart(_ sender: Any) {

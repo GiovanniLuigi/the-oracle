@@ -30,8 +30,8 @@ final class OracleListCoordinator: Coordinator {
         oracleDetailCoordinator.start()
     }
     
-    func startOracleGameStepOne() {
-        let oracleGameStepOneCoordinator = OracleGameStepOneCoordinator(navigationController: navigationController)
+    func startOracleGameStepOne(viewModel: OracleGameStepOneViewModel) {
+        let oracleGameStepOneCoordinator = OracleGameStepOneCoordinator(navigationController: navigationController, viewModel: viewModel)
         childCoordinators.append(oracleGameStepOneCoordinator)
         oracleGameStepOneCoordinator.start()
     }

@@ -11,14 +11,15 @@ import UIKit
 final class OracleGameStepOneCoordinator: Coordinator {
     private(set) var childCoordinators: [Coordinator] = []
     private let navigationController: UINavigationController
+    private let viewModel: OracleGameStepOneViewModel
     
-    init(navigationController: UINavigationController) {
+    init(navigationController: UINavigationController, viewModel: OracleGameStepOneViewModel) {
         self.navigationController = navigationController
+        self.viewModel = viewModel
     }
     
     func start() {
         let oracleGameStepOneViewController = OracleGameStepOneViewController.instantiate()
-        let viewModel = OracleGameStepOneViewModel()
         oracleGameStepOneViewController.viewModel = viewModel
         
         navigationController.pushViewController(oracleGameStepOneViewController, animated: true)
