@@ -10,7 +10,6 @@
 		1127822325B5C1BE0072F547 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1127822225B5C1BE0072F547 /* AppDelegate.swift */; };
 		1127822525B5C1BE0072F547 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1127822425B5C1BE0072F547 /* SceneDelegate.swift */; };
 		1127822C25B5C1BF0072F547 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1127822B25B5C1BF0072F547 /* Assets.xcassets */; };
-		1127822F25B5C1BF0072F547 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1127822D25B5C1BF0072F547 /* LaunchScreen.storyboard */; };
 		1127823A25B5C1BF0072F547 /* TheOracleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1127823925B5C1BF0072F547 /* TheOracleTests.swift */; };
 		1127824A25B5C2AC0072F547 /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1127824925B5C2AC0072F547 /* Network.swift */; };
 		1127824C25B5C2B40072F547 /* DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1127824B25B5C2B40072F547 /* DataSource.swift */; };
@@ -59,7 +58,6 @@
 		1127822225B5C1BE0072F547 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1127822425B5C1BE0072F547 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		1127822B25B5C1BF0072F547 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		1127822E25B5C1BF0072F547 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1127823025B5C1BF0072F547 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1127823525B5C1BF0072F547 /* TheOracleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TheOracleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1127823925B5C1BF0072F547 /* TheOracleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TheOracleTests.swift; sourceTree = "<group>"; };
@@ -143,13 +141,14 @@
 		1127822125B5C1BE0072F547 /* TheOracle */ = {
 			isa = PBXGroup;
 			children = (
-				119B5F3225C20C6D00ECBFF7 /* Coordinators */,
+				11935A5825BA2C6600DA7673 /* OracleList */,
+				11AA720225C44FE400A3185C /* OracleGameStepOne */,
+				11D0C0E025C36B65008C34D7 /* OracleDetail */,
+				117E5B2A25BEFEA300B93E74 /* Common */,
 				117E5B2125BB837700B93E74 /* Utils */,
 				11935A5F25BA2EFB00DA7673 /* Extensions */,
 				1127824825B5C2090072F547 /* SupportingFiles */,
 				1127824725B5C1FD0072F547 /* Services */,
-				1127824625B5C1EA0072F547 /* ViewModels */,
-				1127824525B5C1E60072F547 /* Views */,
 				1127824425B5C1E10072F547 /* Models */,
 			);
 			path = TheOracle;
@@ -170,29 +169,6 @@
 				11935A2125BA13D900DA7673 /* Oracle.swift */,
 			);
 			path = Models;
-			sourceTree = "<group>";
-		};
-		1127824525B5C1E60072F547 /* Views */ = {
-			isa = PBXGroup;
-			children = (
-				11AA720225C44FE400A3185C /* OracleGameStepOne */,
-				11D0C0E025C36B65008C34D7 /* OracleDetail */,
-				117E5B2A25BEFEA300B93E74 /* Common */,
-				11935A5825BA2C6600DA7673 /* OracleList */,
-				1127822D25B5C1BF0072F547 /* LaunchScreen.storyboard */,
-			);
-			path = Views;
-			sourceTree = "<group>";
-		};
-		1127824625B5C1EA0072F547 /* ViewModels */ = {
-			isa = PBXGroup;
-			children = (
-				11935A5425BA2B5000DA7673 /* OracleListViewModel.swift */,
-				11D0C0E325C36BA2008C34D7 /* OracleCellViewModel.swift */,
-				11AA71FE25C44BDC00A3185C /* OracleDetailViewModel.swift */,
-				11AA720F25C450EE00A3185C /* OracleGameStepOneViewModel.swift */,
-			);
-			path = ViewModels;
 			sourceTree = "<group>";
 		};
 		1127824725B5C1FD0072F547 /* Services */ = {
@@ -227,6 +203,7 @@
 		117E5B2A25BEFEA300B93E74 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				119B5F3225C20C6D00ECBFF7 /* Coordinator */,
 				117E5B2B25BEFEB600B93E74 /* CardView.swift */,
 				119B5F4925C20F5D00ECBFF7 /* Storyboarded.swift */,
 			);
@@ -236,6 +213,9 @@
 		11935A5825BA2C6600DA7673 /* OracleList */ = {
 			isa = PBXGroup;
 			children = (
+				119B5F4525C20EF000ECBFF7 /* OracleListCoordinator.swift */,
+				11935A5425BA2B5000DA7673 /* OracleListViewModel.swift */,
+				11D0C0E325C36BA2008C34D7 /* OracleCellViewModel.swift */,
 				11935A5925BA2CAF00DA7673 /* OracleTableViewCell.swift */,
 				11935A5A25BA2CAF00DA7673 /* OracleTableViewCell.xib */,
 				119B5F4F25C2114900ECBFF7 /* OracleListViewController.swift */,
@@ -255,21 +235,20 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
-		119B5F3225C20C6D00ECBFF7 /* Coordinators */ = {
+		119B5F3225C20C6D00ECBFF7 /* Coordinator */ = {
 			isa = PBXGroup;
 			children = (
 				119B5F3325C20C8100ECBFF7 /* AppCoordinator.swift */,
 				119B5F3925C20C9300ECBFF7 /* Coordinator.swift */,
-				119B5F4525C20EF000ECBFF7 /* OracleListCoordinator.swift */,
-				11D0C0E925C36D7A008C34D7 /* OracleDetailCoordinator.swift */,
-				11AA720B25C4506B00A3185C /* OracleGameStepOneCoordinator.swift */,
 			);
-			path = Coordinators;
+			path = Coordinator;
 			sourceTree = "<group>";
 		};
 		11AA720225C44FE400A3185C /* OracleGameStepOne */ = {
 			isa = PBXGroup;
 			children = (
+				11AA720B25C4506B00A3185C /* OracleGameStepOneCoordinator.swift */,
+				11AA720F25C450EE00A3185C /* OracleGameStepOneViewModel.swift */,
 				11AA720325C4505500A3185C /* OracleGameStepOneViewController.swift */,
 				11AA720425C4505500A3185C /* OracleGameStepOneViewController.xib */,
 			);
@@ -279,6 +258,8 @@
 		11D0C0E025C36B65008C34D7 /* OracleDetail */ = {
 			isa = PBXGroup;
 			children = (
+				11D0C0E925C36D7A008C34D7 /* OracleDetailCoordinator.swift */,
+				11AA71FE25C44BDC00A3185C /* OracleDetailViewModel.swift */,
 				117E5B2625BEFA5000B93E74 /* OracleDetailViewController.swift */,
 				11D0C0F325C376A4008C34D7 /* OracleDetailViewController.xib */,
 			);
@@ -391,7 +372,6 @@
 			files = (
 				119B5F5225C2114900ECBFF7 /* OracleListViewController.xib in Resources */,
 				11D0C0F425C376A4008C34D7 /* OracleDetailViewController.xib in Resources */,
-				1127822F25B5C1BF0072F547 /* LaunchScreen.storyboard in Resources */,
 				11935A2625BA202100DA7673 /* GoogleService-Info.plist in Resources */,
 				11AA720625C4505500A3185C /* OracleGameStepOneViewController.xib in Resources */,
 				1127822C25B5C1BF0072F547 /* Assets.xcassets in Resources */,
@@ -522,17 +502,6 @@
 			targetProxy = 1127823625B5C1BF0072F547 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
-
-/* Begin PBXVariantGroup section */
-		1127822D25B5C1BF0072F547 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				1127822E25B5C1BF0072F547 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		1127823C25B5C1BF0072F547 /* Debug */ = {
