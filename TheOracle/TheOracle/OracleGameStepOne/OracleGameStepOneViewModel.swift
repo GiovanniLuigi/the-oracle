@@ -9,8 +9,25 @@
 import UIKit
 
 
-struct OracleGameStepOneViewModel {
+final class OracleGameStepOneViewModel {
     let cardLogoURL: String
     let preparationDescription: String
     let title: String
+    
+    let alertMessage = "Leaving now would make you lose all your progress"
+    let alertTitle = String.empty
+    let backButtonTitle = "Quit"
+    
+    weak var coordinator: OracleGameStepOneCoordinator?
+    
+    init(cardLogoURL: String, preparationDescription: String, title: String) {
+        self.cardLogoURL = cardLogoURL
+        self.preparationDescription = preparationDescription
+        self.title = title
+    }
+    
+    func shouldBack() {
+        coordinator?.stop()
+    }
+
 }
