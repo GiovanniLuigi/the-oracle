@@ -44,6 +44,7 @@
 		11D80A7525C9FF9300AEAE1C /* OracleGameStepTwoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 11D80A7325C9FF9300AEAE1C /* OracleGameStepTwoViewController.xib */; };
 		11D80A7925C9FFC900AEAE1C /* OracleGameStepTwoCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D80A7825C9FFC900AEAE1C /* OracleGameStepTwoCoordinator.swift */; };
 		11D80A7D25CA01BD00AEAE1C /* OracleGameStepTwoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D80A7C25CA01BD00AEAE1C /* OracleGameStepTwoViewModel.swift */; };
+		11D80A8E25CA04DC00AEAE1C /* OracleCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D80A8D25CA04DC00AEAE1C /* OracleCard.swift */; };
 		55DDB071AD6F8B4FA5797E15 /* Pods_TheOracle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5D4C7E8FDDBD4C516C5C71C /* Pods_TheOracle.framework */; };
 		8F5E9002EE263B63F185339E /* Pods_TheOracleTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E12C94F3609E72F6BC49BDBD /* Pods_TheOracleTests.framework */; };
 /* End PBXBuildFile section */
@@ -100,6 +101,7 @@
 		11D80A7325C9FF9300AEAE1C /* OracleGameStepTwoViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OracleGameStepTwoViewController.xib; sourceTree = "<group>"; };
 		11D80A7825C9FFC900AEAE1C /* OracleGameStepTwoCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OracleGameStepTwoCoordinator.swift; sourceTree = "<group>"; };
 		11D80A7C25CA01BD00AEAE1C /* OracleGameStepTwoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OracleGameStepTwoViewModel.swift; sourceTree = "<group>"; };
+		11D80A8D25CA04DC00AEAE1C /* OracleCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OracleCard.swift; sourceTree = "<group>"; };
 		51280FE6DC848B650A9C5729 /* Pods-TheOracleTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TheOracleTests.debug.xcconfig"; path = "Target Support Files/Pods-TheOracleTests/Pods-TheOracleTests.debug.xcconfig"; sourceTree = "<group>"; };
 		7BC1B5010FEE74751326A75E /* Pods-TheOracle.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TheOracle.release.xcconfig"; path = "Target Support Files/Pods-TheOracle/Pods-TheOracle.release.xcconfig"; sourceTree = "<group>"; };
 		81F5832B5D52257967B8C8F6 /* Pods-TheOracle.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TheOracle.debug.xcconfig"; path = "Target Support Files/Pods-TheOracle/Pods-TheOracle.debug.xcconfig"; sourceTree = "<group>"; };
@@ -178,6 +180,7 @@
 			isa = PBXGroup;
 			children = (
 				11935A2125BA13D900DA7673 /* Oracle.swift */,
+				11D80A8D25CA04DC00AEAE1C /* OracleCard.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -502,6 +505,7 @@
 				11D0C0EA25C36D7A008C34D7 /* OracleDetailCoordinator.swift in Sources */,
 				11AA721025C450EE00A3185C /* OracleGameStepOneViewModel.swift in Sources */,
 				117E5B2325BB83C700B93E74 /* FontConstants.swift in Sources */,
+				11D80A8E25CA04DC00AEAE1C /* OracleCard.swift in Sources */,
 				11935A5B25BA2CAF00DA7673 /* OracleTableViewCell.swift in Sources */,
 				1127824C25B5C2B40072F547 /* DataSource.swift in Sources */,
 				117E5B1825BB7CA200B93E74 /* UIImageView+Extension.swift in Sources */,

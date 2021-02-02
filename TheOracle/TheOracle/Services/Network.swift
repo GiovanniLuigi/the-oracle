@@ -13,10 +13,14 @@ struct Network {
     
     static let shared = Network()
     
-    let ref: DatabaseReference
+    private let ref: DatabaseReference
     
-    var oraclesRef: DatabaseReference {
+    private var oraclesRef: DatabaseReference {
         return ref.child("oracles")
+    }
+    
+    private var cardsRef: DatabaseReference {
+        return ref.child("cards")
     }
     
     enum NetworkError: Error, LocalizedError {
@@ -38,6 +42,20 @@ struct Network {
             if let oracles = snapshot.decode(type: [Oracle].self) {
                 DispatchQueue.main.async {
                     completion(.success(oracles))
+                }
+            } else {
+                DispatchQueue.main.async {
+                    completion(.failure(.genericError))
+                }
+            }
+        }
+    }
+    
+    func getCards(from oracleId: String, completion: @escaping (Result<[OracleCard], NetworkError>) -> Void) {
+        cardsRef.child(oracleId).observeSingleEvent(of: .value) { (snapshot) in
+            if let cards = snapshot.decode(type: [OracleCard].self) {
+                DispatchQueue.main.async {
+                    completion(.success(cards))
                 }
             } else {
                 DispatchQueue.main.async {
