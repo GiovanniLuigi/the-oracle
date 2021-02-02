@@ -24,13 +24,27 @@ final class OracleGameStepOneCoordinator: Coordinator {
         let oracleGameStepOneViewController = OracleGameStepOneViewController.instantiate()
         viewModel.coordinator = self
         oracleGameStepOneViewController.viewModel = viewModel
+        oracleGameStepOneViewController.coordinator = self
         
         navigationController.pushViewController(oracleGameStepOneViewController, animated: true)
+    }
+    
+    func startGameStepTwo() {
+        let oracleGameStepTwoCoordinator = OracleGameStepTwoCoordinator(navigationController: navigationController, parentCoordinator: self)
+        childCoordinators.append(oracleGameStepTwoCoordinator)
+        oracleGameStepTwoCoordinator.start()
     }
     
     func stop() {
         navigationController.popViewController(animated: true)
         parentCoordinator?.didFinish(childCoordinator: self)
     }
-
+    
+    func didFinish(childCoordinator: Coordinator) {
+        if let index = childCoordinators.firstIndex(where: { coordinator -> Bool in
+            return coordinator === childCoordinator
+        }) {
+            childCoordinators.remove(at: index)
+        }
+    }
 }

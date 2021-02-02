@@ -11,6 +11,8 @@ import UIKit
 class OracleGameStepOneViewController: UIViewController {
 
     var viewModel: OracleGameStepOneViewModel!
+    var coordinator: OracleGameStepOneCoordinator!
+    
     @IBOutlet weak var oracleImageView: UIImageView!
     @IBOutlet weak var preparationDescription: UILabel!
     
@@ -31,7 +33,7 @@ class OracleGameStepOneViewController: UIViewController {
     }
     
     @IBAction func didTapStart(_ sender: Any) {
-        print("Start")
+        coordinator.startGameStepTwo()
     }
 
 }

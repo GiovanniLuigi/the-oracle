@@ -40,6 +40,10 @@
 		11D0C0E425C36BA2008C34D7 /* OracleCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D0C0E325C36BA2008C34D7 /* OracleCellViewModel.swift */; };
 		11D0C0EA25C36D7A008C34D7 /* OracleDetailCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D0C0E925C36D7A008C34D7 /* OracleDetailCoordinator.swift */; };
 		11D0C0F425C376A4008C34D7 /* OracleDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 11D0C0F325C376A4008C34D7 /* OracleDetailViewController.xib */; };
+		11D80A7425C9FF9300AEAE1C /* OracleGameStepTwoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D80A7225C9FF9300AEAE1C /* OracleGameStepTwoViewController.swift */; };
+		11D80A7525C9FF9300AEAE1C /* OracleGameStepTwoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 11D80A7325C9FF9300AEAE1C /* OracleGameStepTwoViewController.xib */; };
+		11D80A7925C9FFC900AEAE1C /* OracleGameStepTwoCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D80A7825C9FFC900AEAE1C /* OracleGameStepTwoCoordinator.swift */; };
+		11D80A7D25CA01BD00AEAE1C /* OracleGameStepTwoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D80A7C25CA01BD00AEAE1C /* OracleGameStepTwoViewModel.swift */; };
 		55DDB071AD6F8B4FA5797E15 /* Pods_TheOracle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5D4C7E8FDDBD4C516C5C71C /* Pods_TheOracle.framework */; };
 		8F5E9002EE263B63F185339E /* Pods_TheOracleTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E12C94F3609E72F6BC49BDBD /* Pods_TheOracleTests.framework */; };
 /* End PBXBuildFile section */
@@ -92,6 +96,10 @@
 		11D0C0E325C36BA2008C34D7 /* OracleCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OracleCellViewModel.swift; sourceTree = "<group>"; };
 		11D0C0E925C36D7A008C34D7 /* OracleDetailCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OracleDetailCoordinator.swift; sourceTree = "<group>"; };
 		11D0C0F325C376A4008C34D7 /* OracleDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OracleDetailViewController.xib; sourceTree = "<group>"; };
+		11D80A7225C9FF9300AEAE1C /* OracleGameStepTwoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OracleGameStepTwoViewController.swift; sourceTree = "<group>"; };
+		11D80A7325C9FF9300AEAE1C /* OracleGameStepTwoViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OracleGameStepTwoViewController.xib; sourceTree = "<group>"; };
+		11D80A7825C9FFC900AEAE1C /* OracleGameStepTwoCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OracleGameStepTwoCoordinator.swift; sourceTree = "<group>"; };
+		11D80A7C25CA01BD00AEAE1C /* OracleGameStepTwoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OracleGameStepTwoViewModel.swift; sourceTree = "<group>"; };
 		51280FE6DC848B650A9C5729 /* Pods-TheOracleTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TheOracleTests.debug.xcconfig"; path = "Target Support Files/Pods-TheOracleTests/Pods-TheOracleTests.debug.xcconfig"; sourceTree = "<group>"; };
 		7BC1B5010FEE74751326A75E /* Pods-TheOracle.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TheOracle.release.xcconfig"; path = "Target Support Files/Pods-TheOracle/Pods-TheOracle.release.xcconfig"; sourceTree = "<group>"; };
 		81F5832B5D52257967B8C8F6 /* Pods-TheOracle.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TheOracle.debug.xcconfig"; path = "Target Support Files/Pods-TheOracle/Pods-TheOracle.debug.xcconfig"; sourceTree = "<group>"; };
@@ -143,6 +151,7 @@
 		1127822125B5C1BE0072F547 /* TheOracle */ = {
 			isa = PBXGroup;
 			children = (
+				11D80A7125C9FF7D00AEAE1C /* OracleGameStepTwo */,
 				11935A5825BA2C6600DA7673 /* OracleList */,
 				11AA720225C44FE400A3185C /* OracleGameStepOne */,
 				11D0C0E025C36B65008C34D7 /* OracleDetail */,
@@ -269,6 +278,17 @@
 			path = OracleDetail;
 			sourceTree = "<group>";
 		};
+		11D80A7125C9FF7D00AEAE1C /* OracleGameStepTwo */ = {
+			isa = PBXGroup;
+			children = (
+				11D80A7225C9FF9300AEAE1C /* OracleGameStepTwoViewController.swift */,
+				11D80A7325C9FF9300AEAE1C /* OracleGameStepTwoViewController.xib */,
+				11D80A7825C9FFC900AEAE1C /* OracleGameStepTwoCoordinator.swift */,
+				11D80A7C25CA01BD00AEAE1C /* OracleGameStepTwoViewModel.swift */,
+			);
+			path = OracleGameStepTwo;
+			sourceTree = "<group>";
+		};
 		168CEB87BBFBE5E18760E149 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -337,7 +357,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1130;
-				LastUpgradeCheck = 1130;
+				LastUpgradeCheck = 1230;
 				ORGANIZATIONNAME = "Giovanni Luigi Bruno";
 				TargetAttributes = {
 					1127821E25B5C1BE0072F547 = {
@@ -377,6 +397,7 @@
 				11D0C0F425C376A4008C34D7 /* OracleDetailViewController.xib in Resources */,
 				11935A2625BA202100DA7673 /* GoogleService-Info.plist in Resources */,
 				11AA720625C4505500A3185C /* OracleGameStepOneViewController.xib in Resources */,
+				11D80A7525C9FF9300AEAE1C /* OracleGameStepTwoViewController.xib in Resources */,
 				1127822C25B5C1BF0072F547 /* Assets.xcassets in Resources */,
 				11935A5C25BA2CAF00DA7673 /* OracleTableViewCell.xib in Resources */,
 			);
@@ -461,6 +482,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				119B5F3A25C20C9300ECBFF7 /* Coordinator.swift in Sources */,
+				11D80A7425C9FF9300AEAE1C /* OracleGameStepTwoViewController.swift in Sources */,
+				11D80A7D25CA01BD00AEAE1C /* OracleGameStepTwoViewModel.swift in Sources */,
 				11AA720525C4505500A3185C /* OracleGameStepOneViewController.swift in Sources */,
 				117E5B2C25BEFEB600B93E74 /* CardView.swift in Sources */,
 				117E5B2725BEFA5000B93E74 /* OracleDetailViewController.swift in Sources */,
@@ -470,6 +493,7 @@
 				119B5F5A25C2144C00ECBFF7 /* UIViewController+Extensions.swift in Sources */,
 				117E5B1E25BB823600B93E74 /* UILabel+Extensions.swift in Sources */,
 				119B5F4625C20EF000ECBFF7 /* OracleListCoordinator.swift in Sources */,
+				11D80A7925C9FFC900AEAE1C /* OracleGameStepTwoCoordinator.swift in Sources */,
 				1127822325B5C1BE0072F547 /* AppDelegate.swift in Sources */,
 				11AA720C25C4506B00A3185C /* OracleGameStepOneCoordinator.swift in Sources */,
 				1127824A25B5C2AC0072F547 /* Network.swift in Sources */,
@@ -534,6 +558,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -594,6 +619,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
