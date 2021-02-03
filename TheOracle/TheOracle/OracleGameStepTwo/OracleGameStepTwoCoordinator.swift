@@ -13,15 +13,17 @@ final class OracleGameStepTwoCoordinator: Coordinator {
     private(set) var childCoordinators: [Coordinator] = []
     private let navigationController: UINavigationController
     private let parentCoordinator: OracleGameStepOneCoordinator
+    private let logoURL: String
     
-    init(navigationController: UINavigationController, parentCoordinator: OracleGameStepOneCoordinator) {
+    init(navigationController: UINavigationController, parentCoordinator: OracleGameStepOneCoordinator, logoURL: String) {
         self.navigationController = navigationController
         self.parentCoordinator = parentCoordinator
+        self.logoURL = logoURL
     }
     
     func start() {
         let oracleGameStepTwoViewController = OracleGameStepTwoViewController.instantiate()
-        oracleGameStepTwoViewController.viewModel = OracleGameStepTwoViewModel(coordinator: self)
+        oracleGameStepTwoViewController.viewModel = OracleGameStepTwoViewModel(coordinator: self, logoURL: logoURL)
         navigationController.pushViewController(oracleGameStepTwoViewController, animated: true)
     }
     

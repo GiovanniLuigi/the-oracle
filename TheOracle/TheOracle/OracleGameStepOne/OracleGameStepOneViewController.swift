@@ -33,7 +33,7 @@ class OracleGameStepOneViewController: UIViewController {
     }
     
     @IBAction func didTapStart(_ sender: Any) {
-        coordinator.startGameStepTwo()
+        coordinator.startGameStepTwo(logoURL: viewModel.cardLogoURL)
     }
 
 }

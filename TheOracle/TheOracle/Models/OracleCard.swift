@@ -12,5 +12,4 @@ import Foundation
 struct OracleCard: Codable {
     let title: String
     let description: String
-    let imageURL: String
 }
