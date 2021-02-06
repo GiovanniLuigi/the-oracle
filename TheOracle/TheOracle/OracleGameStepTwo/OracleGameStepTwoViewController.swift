@@ -73,5 +73,7 @@ extension OracleGameStepTwoViewController: UICollectionViewDelegateFlowLayout {
 }
 
 extension OracleGameStepTwoViewController: UICollectionViewDelegate {
-    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        viewModel.didSelectCard(at: indexPath.row)
+    }
 }

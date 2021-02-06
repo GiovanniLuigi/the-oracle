@@ -31,4 +31,8 @@ struct OracleGameStepTwoViewModel {
     func cellViewModel(at row: Int) -> OracleGameStepTwoCellViewModel {
         return OracleGameStepTwoCellViewModel(description: "Test", title: "Test", logoURL: logoURL)
     }
+    
+    func didSelectCard(at row: Int) {
+        coordinator.startCardDetail()
+    }
 }

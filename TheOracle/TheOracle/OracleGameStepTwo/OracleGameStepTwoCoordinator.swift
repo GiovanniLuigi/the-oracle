@@ -27,6 +27,12 @@ final class OracleGameStepTwoCoordinator: Coordinator {
         navigationController.pushViewController(oracleGameStepTwoViewController, animated: true)
     }
     
+    func startCardDetail() {
+        let cardDetailCoordinator = CardDetailCoordinator(navigationController: navigationController)
+        childCoordinators.append(cardDetailCoordinator)
+        cardDetailCoordinator.start()
+    }
+    
     func stop() {
         navigationController.popToRootViewController(animated: true)
         parentCoordinator.didFinish(childCoordinator: self)
