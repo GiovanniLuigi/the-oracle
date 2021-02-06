@@ -24,7 +24,7 @@ final class OracleListViewModel {
         oracles.count
     }
     let coordinator: OracleListCoordinator
-    let title: String = "Oracles"
+    let title: String = "Tire a sua carta"
     
     init(coordinator: OracleListCoordinator) {
         self.coordinator = coordinator

@@ -18,6 +18,8 @@ class OracleListViewController: UIViewController {
         super.viewDidLoad()
         title = viewModel.title
         
+        navigationController?.navigationBar.prefersLargeTitles = true
+        
         viewModel.delegate = self
         tableView.dataSource = self
         tableView.delegate = self

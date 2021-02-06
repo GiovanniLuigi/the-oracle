@@ -11,6 +11,15 @@ import UIKit
 class OracleGameStepTwoCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var logoImageView: UIImageView!
     
+    @IBOutlet weak var cardBackgroundView: UIView!
+    
+    
+    override  func awakeFromNib() {
+        super.awakeFromNib()
+        cardBackgroundView.layer.cornerRadius = 20
+        
+    }
+    
     func update(with viewModel: OracleGameStepTwoCellViewModel) {
         logoImageView.setImage(from: viewModel.logoURL)
     }
