@@ -19,10 +19,6 @@ struct Network {
         return ref.child("oracles")
     }
     
-    private var cardsRef: DatabaseReference {
-        return ref.child("cards")
-    }
-    
     enum NetworkError: Error, LocalizedError {
         case genericError
         
@@ -51,8 +47,8 @@ struct Network {
         }
     }
     
-    func getCards(from oracleId: String, completion: @escaping (Result<[OracleCard], NetworkError>) -> Void) {
-        cardsRef.child(oracleId).observeSingleEvent(of: .value) { (snapshot) in
+    func getCard(id: String, completion: @escaping (Result<[OracleCard], NetworkError>) -> Void) {
+        ref.child(id).observeSingleEvent(of: .value) { (snapshot) in
             if let cards = snapshot.decode(type: [OracleCard].self) {
                 DispatchQueue.main.async {
                     completion(.success(cards))
@@ -64,13 +60,9 @@ struct Network {
             }
         }
     }
-    
-    
 }
 
-
 extension DataSnapshot {
-    
     func decode<T: Decodable>(type: T.Type) -> T? {
         guard let value = value, let data = try? JSONSerialization.data(withJSONObject: value, options: .fragmentsAllowed) else {
             return nil
@@ -82,5 +74,4 @@ extension DataSnapshot {
         
         return nil
     }
-    
 }

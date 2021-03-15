@@ -15,4 +15,6 @@ struct Oracle: Codable {
     let description: String
     let preparationDescription: String
     let logoURL: String
+    let oracleID: Int
+    let cardCount: Int
 }

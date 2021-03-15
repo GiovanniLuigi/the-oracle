@@ -28,18 +28,22 @@ class CardDetailViewController: UIViewController {
         self.backButton.setTitle(viewModel.backButtonTitle, for: .normal)
     }
 
+    func loadCard() {
+        
+    }
+    
     @IBAction func back(_ sender: Any) {
-        print("back")
+        viewModel.back()
     }
     
     @objc
     @IBAction func save(_ sender: Any) {
-        print("save")
+        viewModel.save()
     }
     
     @objc
     func share() {
-        print("share")
+        viewModel.share()
     }
     
 }

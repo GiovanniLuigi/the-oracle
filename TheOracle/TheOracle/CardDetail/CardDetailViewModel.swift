@@ -17,5 +17,30 @@ struct CardDetailViewModel {
     let backButtonTitle: String = "Back to home"
     let saveButtonTitle: String = "Save this message"
     
+    let oracleID: Int
+    let cardCount: Int
+    let client: Network
+
+    init(oracleID: Int, cardCount: Int) {
+        self.oracleID = oracleID
+        self.cardCount = cardCount
+        self.client = Network.shared
+    }
+    
+    func load() {
+        
+    }
+    
+    func back() {
+        print("back")
+    }
+    
+    func save() {
+        print("save")
+    }
+    
+    func share() {
+        print("share")
+    }
     
 }
