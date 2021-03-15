@@ -28,7 +28,6 @@ class OracleListViewController: UIViewController {
     
 }
 
-
 extension OracleListViewController: OracleListViewModelDelegate {
     
     func didFetchFetchOracles() {
@@ -36,7 +35,9 @@ extension OracleListViewController: OracleListViewModelDelegate {
     }
     
     func failToFetchOracles() {
-        print("Error to fetch oracles")
+        presentAlert(title: "Error", message: "Fail to fetch decks", okAction:  {
+            self.dismiss(animated: true, completion: nil)
+        })
     }
 }
 

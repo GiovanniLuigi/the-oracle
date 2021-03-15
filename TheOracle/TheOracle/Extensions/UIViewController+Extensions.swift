@@ -13,21 +13,23 @@ extension UIViewController: Storyboarded {}
 
 extension UIViewController {
     
-    
     func presentAlert(title: String, message: String, okAction: (() -> Void)? = nil, cancelAction: (() -> Void)? = nil) {
         let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
         
-        alertController.addAction(UIAlertAction(title: "Ok", style: UIAlertAction.Style.default) {
-            _ in
-            okAction?()
-        })
+        if okAction != nil {
+            alertController.addAction(UIAlertAction(title: "Ok", style: UIAlertAction.Style.default) {
+                _ in
+                okAction?()
+            })
+        }
         
-        alertController.addAction(UIAlertAction(title: "Cancel", style: UIAlertAction.Style.cancel) {
-            _ in
-            cancelAction?()
-        })
+        if cancelAction != nil {
+            alertController.addAction(UIAlertAction(title: "Cancel", style: UIAlertAction.Style.cancel) {
+                _ in
+                cancelAction?()
+            })
+        }
         
         present(alertController, animated: true, completion: nil)
     }
-    
 }

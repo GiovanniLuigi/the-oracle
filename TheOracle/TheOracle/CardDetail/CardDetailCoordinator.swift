@@ -20,9 +20,7 @@ final class CardDetailCoordinator: Coordinator {
     
     func start() {
         let cardDetailViewController = CardDetailViewController.instantiate()
+        cardDetailViewController.viewModel = CardDetailViewModel()
         navigationController.pushViewController(cardDetailViewController, animated: true)
     }
-    
-    
-    
 }

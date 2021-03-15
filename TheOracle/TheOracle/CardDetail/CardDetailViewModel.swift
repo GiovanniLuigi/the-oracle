@@ -10,5 +10,12 @@ import Foundation
 
 
 struct CardDetailViewModel {
+    let title: String = "The lion card"
+    let shareBarButtonTitle: String = "Share"
+    let saveBarButtonTitle: String = "Save"
+    
+    let backButtonTitle: String = "Back to home"
+    let saveButtonTitle: String = "Save this message"
+    
     
 }
