@@ -23,7 +23,14 @@ final class CardDetailCoordinator: Coordinator {
     
     func start() {
         let cardDetailViewController = CardDetailViewController.instantiate()
-        cardDetailViewController.viewModel = CardDetailViewModel(oracleID: oracleID, cardCount: cardCount, viewDelegate: cardDetailViewController)
+        cardDetailViewController.viewModel = CardDetailViewModel(oracleID: oracleID, cardCount: cardCount, viewDelegate: cardDetailViewController, delegate: self)
         navigationController.pushViewController(cardDetailViewController, animated: true)
+    }
+}
+
+
+extension CardDetailCoordinator: CardDetailDelegate {
+    func didStop() {
+        navigationController.popViewController(animated: true)
     }
 }

@@ -8,6 +8,11 @@
 
 import Foundation
 
+
+protocol CardDetailDelegate {
+    func didStop()
+}
+
 protocol CardDetailViewDelegate {
     func viewModelDidFetchCardWithSuccess(card: OracleCard)
     func viewModelDidFetchCardWithError(error: Error)
@@ -25,12 +30,14 @@ struct CardDetailViewModel {
     let cardCount: Int
     let client: Network
     let viewDelegate: CardDetailViewDelegate
+    let delegate: CardDetailDelegate
     
-    init(oracleID: Int, cardCount: Int, viewDelegate: CardDetailViewDelegate) {
+    init(oracleID: Int, cardCount: Int, viewDelegate: CardDetailViewDelegate, delegate: CardDetailDelegate) {
         self.oracleID = oracleID
         self.cardCount = cardCount
         self.viewDelegate = viewDelegate
         self.client = Network.shared
+        self.delegate = delegate
     }
     
     func loadCard() {
@@ -54,6 +61,6 @@ struct CardDetailViewModel {
     }
     
     func stop() {
-        print("stop")
+        delegate.didStop()
     }
 }

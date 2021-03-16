@@ -63,8 +63,8 @@ class CardDetailViewController: UIViewController {
     
     private func showError(error: Error) {
         presentAlert(title: "Error", message: error.localizedDescription, okAction:  { [weak self] in
-            self?.dismiss(animated: true, completion: nil)
             self?.viewModel.stop()
+            self?.dismiss(animated: true, completion: nil)
         })
     }
 }
