@@ -7,7 +7,7 @@
 //
 
 import Foundation
-
+import CoreData
 
 protocol CardDetailDelegate {
     func didStop()
@@ -18,7 +18,7 @@ protocol CardDetailViewDelegate {
     func viewModelDidFetchCardWithError(error: Error)
 }
 
-struct CardDetailViewModel {
+final class CardDetailViewModel {
     let title: String = "The lion card"
     let shareBarButtonTitle: String = "Share"
     let saveBarButtonTitle: String = "Save"
@@ -31,6 +31,8 @@ struct CardDetailViewModel {
     let client: Network
     let viewDelegate: CardDetailViewDelegate
     let delegate: CardDetailDelegate
+    let dataSource: DataSource
+    var card: OracleCard?
     
     init(oracleID: Int, cardCount: Int, viewDelegate: CardDetailViewDelegate, delegate: CardDetailDelegate) {
         self.oracleID = oracleID
@@ -38,16 +40,18 @@ struct CardDetailViewModel {
         self.viewDelegate = viewDelegate
         self.client = Network.shared
         self.delegate = delegate
+        self.dataSource = DataSource.shared
     }
     
     func loadCard() {
-        let cardId = "\(oracleID)\(Int.random(in: 0..<cardCount))"
-        client.getCard(id: cardId) { (result) in
+        let cardId = "\(oracleID)\(Int.random(in: 1...cardCount))"
+        client.getCard(id: cardId) { [weak self] (result) in
             switch result {
             case .success(let card):
-                viewDelegate.viewModelDidFetchCardWithSuccess(card: card)
+                self?.card = card
+                self?.viewDelegate.viewModelDidFetchCardWithSuccess(card: card)
             case .failure(let error):
-                viewDelegate.viewModelDidFetchCardWithError(error: error)
+                self?.viewDelegate.viewModelDidFetchCardWithError(error: error)
             }
         }
     }
@@ -57,7 +61,20 @@ struct CardDetailViewModel {
     }
     
     func save() {
-        print("save")
+        guard let card = self.card else {
+            return
+        }
+        
+        let fetchRequest: NSFetchRequest<CardEntity> = CardEntity.fetchRequest()
+        let predicate = NSPredicate(format: "id = %@", card.id)
+        fetchRequest.predicate = predicate
+        
+        let cardEntity = try? dataSource.viewContext.fetch(fetchRequest).first ?? CardEntity(context: dataSource.viewContext)
+        cardEntity?.imageURL = card.imageURL
+        cardEntity?.text = card.description
+        cardEntity?.title = card.title
+        
+        dataSource.saveContext()
     }
     
     func stop() {
