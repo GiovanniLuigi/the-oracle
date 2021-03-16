@@ -13,6 +13,8 @@ final class OracleGameStepOneViewModel {
     let cardLogoURL: String
     let preparationDescription: String
     let title: String
+    let cardCount: Int
+    let oracleID: Int
     
     let alertMessage = "Leaving now would make you lose all your progress"
     let alertTitle = String.empty
@@ -20,14 +22,19 @@ final class OracleGameStepOneViewModel {
     
     weak var coordinator: OracleGameStepOneCoordinator?
     
-    init(cardLogoURL: String, preparationDescription: String, title: String) {
+    init(cardLogoURL: String, preparationDescription: String, title: String, cardCount: Int, oracleID: Int) {
         self.cardLogoURL = cardLogoURL
         self.preparationDescription = preparationDescription
         self.title = title
+        self.cardCount = cardCount
+        self.oracleID = oracleID
     }
     
     func shouldBack() {
         coordinator?.stop()
     }
 
+    func startStepTwo() {
+        coordinator?.startGameStepTwo(logoURL: cardLogoURL, oracleID: oracleID, cardCount: cardCount)
+    }
 }

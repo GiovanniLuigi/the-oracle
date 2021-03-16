@@ -47,11 +47,11 @@ struct Network {
         }
     }
     
-    func getCard(id: String, completion: @escaping (Result<[OracleCard], NetworkError>) -> Void) {
+    func getCard(id: String, completion: @escaping (Result<OracleCard, NetworkError>) -> Void) {
         ref.child(id).observeSingleEvent(of: .value) { (snapshot) in
-            if let cards = snapshot.decode(type: [OracleCard].self) {
+            if let card = snapshot.decode(type: OracleCard.self) {
                 DispatchQueue.main.async {
-                    completion(.success(cards))
+                    completion(.success(card))
                 }
             } else {
                 DispatchQueue.main.async {

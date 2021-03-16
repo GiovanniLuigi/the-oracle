@@ -50,7 +50,7 @@ final class OracleListViewModel {
     
     func didTapCell(at row: Int) {
         let oracle = oracles[row]
-        coordinator.startOracleGameStepOne(viewModel: OracleGameStepOneViewModel(cardLogoURL: oracle.logoURL, preparationDescription: oracle.preparationDescription, title: oracle.title))
+        coordinator.startOracleGameStepOne(viewModel: OracleGameStepOneViewModel(cardLogoURL: oracle.logoURL, preparationDescription: oracle.preparationDescription, title: oracle.title, cardCount: oracle.cardCount, oracleID: oracle.oracleID))
     }
     
 }

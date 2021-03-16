@@ -8,6 +8,10 @@
 
 import Foundation
 
+protocol CardDetailViewDelegate {
+    func viewModelDidFetchCardWithSuccess(card: OracleCard)
+    func viewModelDidFetchCardWithError(error: Error)
+}
 
 struct CardDetailViewModel {
     let title: String = "The lion card"
@@ -20,15 +24,25 @@ struct CardDetailViewModel {
     let oracleID: Int
     let cardCount: Int
     let client: Network
-
-    init(oracleID: Int, cardCount: Int) {
+    let viewDelegate: CardDetailViewDelegate
+    
+    init(oracleID: Int, cardCount: Int, viewDelegate: CardDetailViewDelegate) {
         self.oracleID = oracleID
         self.cardCount = cardCount
+        self.viewDelegate = viewDelegate
         self.client = Network.shared
     }
     
-    func load() {
-        
+    func loadCard() {
+        let cardId = "\(oracleID)\(Int.random(in: 0..<cardCount))"
+        client.getCard(id: cardId) { (result) in
+            switch result {
+            case .success(let card):
+                viewDelegate.viewModelDidFetchCardWithSuccess(card: card)
+            case .failure(let error):
+                viewDelegate.viewModelDidFetchCardWithError(error: error)
+            }
+        }
     }
     
     func back() {
@@ -39,8 +53,7 @@ struct CardDetailViewModel {
         print("save")
     }
     
-    func share() {
-        print("share")
+    func stop() {
+        print("stop")
     }
-    
 }
