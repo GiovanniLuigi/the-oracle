@@ -11,7 +11,7 @@ import FirebaseDatabase
 
 struct Network {
     
-    static let shared = Network()
+    static let shared: Network = Network()
     
     private let ref: DatabaseReference
     

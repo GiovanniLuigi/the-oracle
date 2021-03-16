@@ -35,6 +35,7 @@
 		119B5F5125C2114900ECBFF7 /* OracleListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 119B5F4F25C2114900ECBFF7 /* OracleListViewController.swift */; };
 		119B5F5225C2114900ECBFF7 /* OracleListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 119B5F5025C2114900ECBFF7 /* OracleListViewController.xib */; };
 		119B5F5A25C2144C00ECBFF7 /* UIViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 119B5F5925C2144C00ECBFF7 /* UIViewController+Extensions.swift */; };
+		119FE02B260170DA001BA5B8 /* OracleCoreDataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 119FE029260170DA001BA5B8 /* OracleCoreDataModel.xcdatamodeld */; };
 		11AA71FF25C44BDC00A3185C /* OracleDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11AA71FE25C44BDC00A3185C /* OracleDetailViewModel.swift */; };
 		11AA720525C4505500A3185C /* OracleGameStepOneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11AA720325C4505500A3185C /* OracleGameStepOneViewController.swift */; };
 		11AA720625C4505500A3185C /* OracleGameStepOneViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 11AA720425C4505500A3185C /* OracleGameStepOneViewController.xib */; };
@@ -99,6 +100,7 @@
 		119B5F4F25C2114900ECBFF7 /* OracleListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OracleListViewController.swift; sourceTree = "<group>"; };
 		119B5F5025C2114900ECBFF7 /* OracleListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OracleListViewController.xib; sourceTree = "<group>"; };
 		119B5F5925C2144C00ECBFF7 /* UIViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extensions.swift"; sourceTree = "<group>"; };
+		119FE02A260170DA001BA5B8 /* OracleCoreDataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = OracleCoreDataModel.xcdatamodel; sourceTree = "<group>"; };
 		11AA71FE25C44BDC00A3185C /* OracleDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OracleDetailViewModel.swift; sourceTree = "<group>"; };
 		11AA720325C4505500A3185C /* OracleGameStepOneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OracleGameStepOneViewController.swift; sourceTree = "<group>"; };
 		11AA720425C4505500A3185C /* OracleGameStepOneViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OracleGameStepOneViewController.xib; sourceTree = "<group>"; };
@@ -196,6 +198,7 @@
 			children = (
 				11935A2125BA13D900DA7673 /* Oracle.swift */,
 				11D80A8D25CA04DC00AEAE1C /* OracleCard.swift */,
+				119FE029260170DA001BA5B8 /* OracleCoreDataModel.xcdatamodeld */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -523,6 +526,7 @@
 				117E5B2C25BEFEB600B93E74 /* CardView.swift in Sources */,
 				117E5B2725BEFA5000B93E74 /* OracleDetailViewController.swift in Sources */,
 				11935A2225BA13D900DA7673 /* Oracle.swift in Sources */,
+				119FE02B260170DA001BA5B8 /* OracleCoreDataModel.xcdatamodeld in Sources */,
 				119B5F4A25C20F5D00ECBFF7 /* Storyboarded.swift in Sources */,
 				119B5F5125C2114900ECBFF7 /* OracleListViewController.swift in Sources */,
 				11F613D525CF4B83006715D8 /* CardDetailCoordinator.swift in Sources */,
@@ -803,6 +807,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		119FE029260170DA001BA5B8 /* OracleCoreDataModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				119FE02A260170DA001BA5B8 /* OracleCoreDataModel.xcdatamodel */,
+			);
+			currentVersion = 119FE02A260170DA001BA5B8 /* OracleCoreDataModel.xcdatamodel */;
+			path = OracleCoreDataModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 1127821725B5C1BE0072F547 /* Project object */;
 }
