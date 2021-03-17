@@ -24,6 +24,15 @@ class OracleListViewController: UIViewController {
         tableView.dataSource = self
         tableView.delegate = self
         tableView.register(OracleTableViewCell.nib, forCellReuseIdentifier: OracleTableViewCell.reuseIdentifier)
+        
+        let favoritesBarButton = UIBarButtonItem(title: "Favorites", style: UIBarButtonItem.Style.plain, target: self, action: #selector(didTapFavorites))
+        
+        navigationItem.rightBarButtonItems = [favoritesBarButton]
+    }
+    
+    @objc
+    private func didTapFavorites() {
+        viewModel.startFavorites()
     }
     
 }

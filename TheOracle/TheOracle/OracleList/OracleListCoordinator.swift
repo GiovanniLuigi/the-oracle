@@ -36,6 +36,10 @@ final class OracleListCoordinator: Coordinator {
         oracleGameStepOneCoordinator.start()
     }
     
+    func startFavorites() {
+        
+    }
+    
     func didFinish(childCoordinator: Coordinator) {
         if let index = childCoordinators.firstIndex(where: { coordinator -> Bool in
             return coordinator === childCoordinator

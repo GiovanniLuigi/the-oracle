@@ -53,4 +53,8 @@ final class OracleListViewModel {
         coordinator.startOracleGameStepOne(viewModel: OracleGameStepOneViewModel(cardLogoURL: oracle.logoURL, preparationDescription: oracle.preparationDescription, title: oracle.title, cardCount: oracle.cardCount, oracleID: oracle.oracleID))
     }
     
+    func startFavorites() {
+        coordinator.startFavorites()
+    }
+    
 }

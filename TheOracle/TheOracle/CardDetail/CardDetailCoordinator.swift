@@ -33,4 +33,8 @@ extension CardDetailCoordinator: CardDetailDelegate {
     func didStop() {
         navigationController.popViewController(animated: true)
     }
+    
+    func didStopGame() {
+        navigationController.popToRootViewController(animated: true)
+    }
 }

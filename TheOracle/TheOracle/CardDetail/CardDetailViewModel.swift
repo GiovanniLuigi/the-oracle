@@ -11,6 +11,7 @@ import CoreData
 
 protocol CardDetailDelegate {
     func didStop()
+    func didStopGame()
 }
 
 protocol CardDetailViewDelegate {
@@ -57,7 +58,7 @@ final class CardDetailViewModel {
     }
     
     func back() {
-        print("back")
+        delegate.didStopGame()
     }
     
     func save() {
