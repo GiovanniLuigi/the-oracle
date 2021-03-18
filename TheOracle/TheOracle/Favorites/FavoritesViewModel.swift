@@ -45,6 +45,11 @@ class FavoritesViewModel {
         }
     }
     
+    func selectRowAt(row: Int) {
+        let card = cards[row]
+        coordinator.startCardDetail(card: card)
+    }
+    
     func stop() {
         coordinator.stop()
     }

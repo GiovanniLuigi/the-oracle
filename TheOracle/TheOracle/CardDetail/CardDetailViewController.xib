@@ -93,6 +93,7 @@ Sed purus purus, finibus et tristique eu, suscipit sed nibh. Pellentesque quis s
                                 <constraint firstAttribute="trailing" secondItem="kii-Xy-fJj" secondAttribute="trailing" id="hqn-ZW-CVG"/>
                                 <constraint firstItem="kii-Xy-fJj" firstAttribute="leading" secondItem="oTe-29-By6" secondAttribute="leading" id="pyP-3o-xZQ"/>
                                 <constraint firstItem="Nw6-eL-ICV" firstAttribute="trailing" secondItem="M5Q-XJ-1o9" secondAttribute="trailing" id="uum-IG-vWf"/>
+                                <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="M5Q-XJ-1o9" secondAttribute="bottom" constant="12" id="wKn-KO-6gW"/>
                             </constraints>
                         </view>
                     </subviews>

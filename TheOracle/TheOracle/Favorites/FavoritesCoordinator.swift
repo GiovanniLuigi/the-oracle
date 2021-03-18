@@ -24,7 +24,27 @@ final class FavoritesCoordinator: Coordinator {
         navigationController.pushViewController(favoritesViewController, animated: true)
     }
   
+    func startCardDetail(card: CardEntity) {
+        let cardDetailViewController = CardDetailViewController.instantiate()
+        let viewModel = CardDetailViewModel(oracleID: -1, cardCount: -1, viewDelegate: cardDetailViewController, delegate: self)
+        viewModel.isFavorite = true
+        viewModel.cardID = card.id ?? ""
+        
+        cardDetailViewController.viewModel = viewModel
+        navigationController.pushViewController(cardDetailViewController, animated: true)
+    }
+    
     func stop() {
         navigationController.popViewController(animated: true)
+    }
+}
+
+extension FavoritesCoordinator: CardDetailDelegate {
+    func didStop() {
+        stop()
+    }
+    
+    func didStopGame() {
+        stop()
     }
 }

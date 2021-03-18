@@ -28,6 +28,12 @@ class CardDetailViewController: UIViewController {
         self.saveButton.setTitle(viewModel.saveButtonTitle, for: .normal)
         self.backButton.setTitle(viewModel.backButtonTitle, for: .normal)
         
+        if viewModel.isFavorite {
+            navigationItem.rightBarButtonItems = []
+            saveButton.removeFromSuperview()
+            backButton.removeFromSuperview()
+        }
+        
         loadCard()
     }
     

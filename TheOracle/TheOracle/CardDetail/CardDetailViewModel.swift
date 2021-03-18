@@ -34,6 +34,8 @@ final class CardDetailViewModel {
     let delegate: CardDetailDelegate
     let dataSource: DataSource
     var card: OracleCard?
+    var cardID: String?
+    var isFavorite: Bool = false
     
     init(oracleID: Int, cardCount: Int, viewDelegate: CardDetailViewDelegate, delegate: CardDetailDelegate) {
         self.oracleID = oracleID
@@ -45,14 +47,24 @@ final class CardDetailViewModel {
     }
     
     func loadCard() {
-        let cardId = "\(oracleID)\(Int.random(in: 1...cardCount))"
-        client.getCard(id: cardId) { [weak self] (result) in
-            switch result {
-            case .success(let card):
-                self?.card = card
-                self?.viewDelegate.viewModelDidFetchCardWithSuccess(card: card)
-            case .failure(let error):
-                self?.viewDelegate.viewModelDidFetchCardWithError(error: error)
+        if let cardID = self.cardID {
+            let fetchRequest: NSFetchRequest<CardEntity> = CardEntity.fetchRequestById(cardID)
+            guard let card = try? dataSource.viewContext.fetch(fetchRequest).first else {
+                return
+            }
+            
+            self.card = OracleCard(id: cardID, title: card.title ?? "", description: card.text ?? "", imageURL: card.imageURL ?? "")
+            self.viewDelegate.viewModelDidFetchCardWithSuccess(card: self.card!)
+        } else {
+            let cardId = "\(oracleID)\(Int.random(in: 1...cardCount))"
+            client.getCard(id: cardId) { [weak self] (result) in
+                switch result {
+                case .success(let card):
+                    self?.card = card
+                    self?.viewDelegate.viewModelDidFetchCardWithSuccess(card: card)
+                case .failure(let error):
+                    self?.viewDelegate.viewModelDidFetchCardWithError(error: error)
+                }
             }
         }
     }
