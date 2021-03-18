@@ -66,14 +66,22 @@ final class CardDetailViewModel {
             return
         }
         
-        let fetchRequest: NSFetchRequest<CardEntity> = CardEntity.fetchRequest()
-        let predicate = NSPredicate(format: "id = %@", card.id)
-        fetchRequest.predicate = predicate
+        let fetchRequest: NSFetchRequest<CardEntity> = CardEntity.fetchRequestById(card.id)
         
-        let cardEntity = try? dataSource.viewContext.fetch(fetchRequest).first ?? CardEntity(context: dataSource.viewContext)
-        cardEntity?.imageURL = card.imageURL
-        cardEntity?.text = card.description
-        cardEntity?.title = card.title
+        let cards = try? dataSource.viewContext.fetch(fetchRequest)
+        
+        if let cardEntity = cards?.first {
+            cardEntity.id = card.id
+            cardEntity.imageURL = card.imageURL
+            cardEntity.text = card.description
+            cardEntity.title = card.title
+        } else {
+            let cardEntity = CardEntity(context: dataSource.viewContext)
+            cardEntity.id = card.id
+            cardEntity.imageURL = card.imageURL
+            cardEntity.text = card.description
+            cardEntity.title = card.title
+        }
         
         dataSource.saveContext()
     }

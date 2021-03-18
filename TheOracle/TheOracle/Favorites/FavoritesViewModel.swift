@@ -1,0 +1,52 @@
+//
+//  FavoritesViewModel.swift
+//  TheOracle
+//
+//  Created by Giovanni Luidi Bruno on 17/03/21.
+//  Copyright © 2021 Giovanni Luigi Bruno. All rights reserved.
+//
+
+import CoreData
+
+protocol FavoritesViewDelegate {
+    func didFetchCardsWithSuccess(_ viewModel: FavoritesViewModel)
+    func didFetchCardsWithError(_ viewModel: FavoritesViewModel)
+}
+
+class FavoritesViewModel {
+    private let dataSource: DataSource
+    
+    var cards: [CardEntity] = []
+    var errorMessage: String = "An error ocurred"
+    let viewDelegate: FavoritesViewDelegate
+    let coordinator: FavoritesCoordinator
+    
+    init(viewDelegate: FavoritesViewDelegate, coordinator: FavoritesCoordinator) {
+        self.viewDelegate = viewDelegate
+        self.coordinator = coordinator
+        dataSource = DataSource.shared
+    }
+    
+    func load() {
+        let request: NSFetchRequest<CardEntity> = CardEntity.fetchRequest()
+        do {
+            let cards = try dataSource.viewContext.fetch(request)
+            if cards.isEmpty {
+                errorMessage = "No favorites found"
+                viewDelegate.didFetchCardsWithError(self)
+                return
+            }
+            
+            self.cards = cards
+            viewDelegate.didFetchCardsWithSuccess(self)
+        } catch {
+            viewDelegate.didFetchCardsWithError(self)
+            return
+        }
+    }
+    
+    func stop() {
+        coordinator.stop()
+    }
+    
+}

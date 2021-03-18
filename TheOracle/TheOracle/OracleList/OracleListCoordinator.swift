@@ -37,7 +37,9 @@ final class OracleListCoordinator: Coordinator {
     }
     
     func startFavorites() {
-        
+        let favoritesCoordinator = FavoritesCoordinator(navigationController: navigationController)
+        childCoordinators.append(favoritesCoordinator)
+        favoritesCoordinator.start()
     }
     
     func didFinish(childCoordinator: Coordinator) {

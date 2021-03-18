@@ -42,6 +42,9 @@ class CardDetailViewController: UIViewController {
     @objc
     @IBAction func save(_ sender: Any) {
         viewModel.save()
+        presentAlert(title: "Success", message: "Addded to your favorites", okAction: {
+            self.dismiss(animated: true, completion: nil)
+        })
     }
     
     @objc
