@@ -64,3 +64,16 @@ extension DataSource {
     }
     
 }
+
+extension DataSource {
+    
+    func checkAndMarkFirstOpen() -> Bool {
+        if let hasOpened: Bool = self.get(key: "hasOpened") {
+            return hasOpened
+        } else {
+            save(object: true, key: "hasOpened")
+            return false
+        }
+    }
+    
+}

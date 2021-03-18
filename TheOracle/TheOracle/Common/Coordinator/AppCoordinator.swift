@@ -20,10 +20,17 @@ final class AppCoordinator: Coordinator {
     func start() {
         let navigationController = UINavigationController()
         
-        let oracleListCoordinator = OracleListCoordinator(navigationController: navigationController)
-        oracleListCoordinator.start()
-        
-        childCoordinators.append(oracleListCoordinator)
+        if DataSource.shared.checkAndMarkFirstOpen() {
+            let oracleListCoordinator = OracleListCoordinator(navigationController: navigationController)
+            oracleListCoordinator.start()
+            
+            childCoordinators.append(oracleListCoordinator)
+        } else {
+            let onboardingCoordinator = OnboardingCoordinator(navigationController: navigationController)
+            onboardingCoordinator.start()
+            
+            childCoordinators.append(onboardingCoordinator)
+        }
         
         window.rootViewController = navigationController
         window.makeKeyAndVisible()
