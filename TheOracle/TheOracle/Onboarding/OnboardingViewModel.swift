@@ -8,17 +8,16 @@
 
 import Foundation
 
-protocol OnboardingViewDelegate {
-    
-}
-
 final class OnboardingViewModel {
     
-    let viewDelegate: OnboardingViewDelegate
+    private let coordinator: OnboardingCoordinator
     
-    init(viewDelegate: OnboardingViewDelegate) {
-        self.viewDelegate = viewDelegate
+    init(coordinator: OnboardingCoordinator) {
+        self.coordinator = coordinator
     }
     
+    func close() {
+        coordinator.startOracleList()
+    }
     
 }

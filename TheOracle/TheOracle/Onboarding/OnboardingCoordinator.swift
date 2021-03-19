@@ -19,9 +19,14 @@ final class OnboardingCoordinator: Coordinator {
     
     func start() {
         let onboardingViewController = OnboardingViewController.instantiate()
-        let viewModel = OnboardingViewModel(viewDelegate: onboardingViewController)
+        let viewModel = OnboardingViewModel(coordinator: self)
         onboardingViewController.viewModel = viewModel
         navigationController.setViewControllers([onboardingViewController], animated: false)
+    }
+    
+    func startOracleList() {
+        let oracleListCoordinator = OracleListCoordinator(navigationController: navigationController)
+        oracleListCoordinator.start()
     }
 }
 

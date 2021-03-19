@@ -11,6 +11,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="OnboardingPageViewController" customModule="TheOracle" customModuleProvider="target">
             <connections>
+                <outlet property="continueButton" destination="ep9-Vw-89L" id="hIp-xf-yOZ"/>
                 <outlet property="label" destination="3wO-BR-aRZ" id="eB3-kw-Te7"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -20,18 +21,31 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3wO-BR-aRZ">
-                    <rect key="frame" x="186" y="442.5" width="42" height="21"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3wO-BR-aRZ">
+                    <rect key="frame" x="32" y="438.5" width="350" height="29"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="24"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ep9-Vw-89L">
+                    <rect key="frame" x="32" y="499.5" width="350" height="34"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                    <state key="normal" title="Continue"/>
+                    <connections>
+                        <action selector="didTapContinue:" destination="-1" eventType="touchUpInside" id="OBi-dw-mLG"/>
+                    </connections>
+                </button>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
+                <constraint firstItem="ep9-Vw-89L" firstAttribute="leading" secondItem="3wO-BR-aRZ" secondAttribute="leading" id="1X6-QN-3ng"/>
+                <constraint firstItem="3wO-BR-aRZ" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="32" id="7Ze-Jr-pyy"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="3wO-BR-aRZ" secondAttribute="trailing" constant="32" id="Aai-KQ-2CN"/>
                 <constraint firstItem="3wO-BR-aRZ" firstAttribute="centerY" secondItem="fnl-2z-Ty3" secondAttribute="centerY" id="ZFC-zm-41x"/>
                 <constraint firstItem="3wO-BR-aRZ" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="dlf-gP-RBk"/>
+                <constraint firstItem="ep9-Vw-89L" firstAttribute="trailing" secondItem="3wO-BR-aRZ" secondAttribute="trailing" id="o0w-OL-15B"/>
+                <constraint firstItem="ep9-Vw-89L" firstAttribute="top" secondItem="3wO-BR-aRZ" secondAttribute="bottom" constant="32" id="zyB-WY-Caw"/>
             </constraints>
             <point key="canvasLocation" x="116" y="66"/>
         </view>

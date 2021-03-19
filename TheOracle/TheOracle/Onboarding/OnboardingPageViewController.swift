@@ -9,17 +9,26 @@
 import UIKit
 
 class OnboardingPageViewController: UIViewController {
+    @IBOutlet weak var continueButton: UIButton!
     @IBOutlet weak var label: UILabel!
     var labelText: String = "This is an text"
     var index: Int = 0
+    var didTapContinueClosure: (()->Void)?
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         label.text = labelText
+        
+        if didTapContinueClosure == nil {
+            continueButton.isHidden = true
+        }
     }
 
-
+    @IBAction func didTapContinue(_ sender: Any) {
+        didTapContinueClosure?()
+    }
+    
     /*
     // MARK: - Navigation
 
