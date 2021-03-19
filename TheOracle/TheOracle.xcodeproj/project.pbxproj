@@ -63,6 +63,9 @@
 		11F8FB062603CDA300899CE4 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11F8FB042603CDA300899CE4 /* OnboardingViewController.swift */; };
 		11F8FB072603CDA300899CE4 /* OnboardingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 11F8FB052603CDA300899CE4 /* OnboardingViewController.xib */; };
 		11F8FB0D2603CF5600899CE4 /* OnboardingCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11F8FB0C2603CF5600899CE4 /* OnboardingCoordinator.swift */; };
+		11F8FB112603D19100899CE4 /* OnboardingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11F8FB102603D19100899CE4 /* OnboardingViewModel.swift */; };
+		11F8FB162604BFDA00899CE4 /* OnboardingPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11F8FB142604BFDA00899CE4 /* OnboardingPageViewController.swift */; };
+		11F8FB172604BFDA00899CE4 /* OnboardingPageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 11F8FB152604BFDA00899CE4 /* OnboardingPageViewController.xib */; };
 		55DDB071AD6F8B4FA5797E15 /* Pods_TheOracle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5D4C7E8FDDBD4C516C5C71C /* Pods_TheOracle.framework */; };
 		8F5E9002EE263B63F185339E /* Pods_TheOracleTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E12C94F3609E72F6BC49BDBD /* Pods_TheOracleTests.framework */; };
 /* End PBXBuildFile section */
@@ -138,6 +141,9 @@
 		11F8FB042603CDA300899CE4 /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
 		11F8FB052603CDA300899CE4 /* OnboardingViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OnboardingViewController.xib; sourceTree = "<group>"; };
 		11F8FB0C2603CF5600899CE4 /* OnboardingCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingCoordinator.swift; sourceTree = "<group>"; };
+		11F8FB102603D19100899CE4 /* OnboardingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewModel.swift; sourceTree = "<group>"; };
+		11F8FB142604BFDA00899CE4 /* OnboardingPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingPageViewController.swift; sourceTree = "<group>"; };
+		11F8FB152604BFDA00899CE4 /* OnboardingPageViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OnboardingPageViewController.xib; sourceTree = "<group>"; };
 		51280FE6DC848B650A9C5729 /* Pods-TheOracleTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TheOracleTests.debug.xcconfig"; path = "Target Support Files/Pods-TheOracleTests/Pods-TheOracleTests.debug.xcconfig"; sourceTree = "<group>"; };
 		7BC1B5010FEE74751326A75E /* Pods-TheOracle.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TheOracle.release.xcconfig"; path = "Target Support Files/Pods-TheOracle/Pods-TheOracle.release.xcconfig"; sourceTree = "<group>"; };
 		81F5832B5D52257967B8C8F6 /* Pods-TheOracle.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TheOracle.debug.xcconfig"; path = "Target Support Files/Pods-TheOracle/Pods-TheOracle.debug.xcconfig"; sourceTree = "<group>"; };
@@ -366,6 +372,9 @@
 				11F8FB042603CDA300899CE4 /* OnboardingViewController.swift */,
 				11F8FB052603CDA300899CE4 /* OnboardingViewController.xib */,
 				11F8FB0C2603CF5600899CE4 /* OnboardingCoordinator.swift */,
+				11F8FB102603D19100899CE4 /* OnboardingViewModel.swift */,
+				11F8FB142604BFDA00899CE4 /* OnboardingPageViewController.swift */,
+				11F8FB152604BFDA00899CE4 /* OnboardingPageViewController.xib */,
 			);
 			path = Onboarding;
 			sourceTree = "<group>";
@@ -481,6 +490,7 @@
 				11F613DF25CF4CAB006715D8 /* CardDetailViewController.xib in Resources */,
 				11AA720625C4505500A3185C /* OracleGameStepOneViewController.xib in Resources */,
 				11D80A7525C9FF9300AEAE1C /* OracleGameStepTwoViewController.xib in Resources */,
+				11F8FB172604BFDA00899CE4 /* OnboardingPageViewController.xib in Resources */,
 				115939F025CB5CC600612916 /* OracleGameStepTwoCollectionViewCell.xib in Resources */,
 				1127822C25B5C1BF0072F547 /* Assets.xcassets in Resources */,
 				11B908992602820100AEE97F /* FavoritesViewController.xib in Resources */,
@@ -574,6 +584,7 @@
 				11AA720525C4505500A3185C /* OracleGameStepOneViewController.swift in Sources */,
 				117E5B2C25BEFEB600B93E74 /* CardView.swift in Sources */,
 				117E5B2725BEFA5000B93E74 /* OracleDetailViewController.swift in Sources */,
+				11F8FB162604BFDA00899CE4 /* OnboardingPageViewController.swift in Sources */,
 				11935A2225BA13D900DA7673 /* Oracle.swift in Sources */,
 				11B908A526028F6900AEE97F /* CardEntity+Extensions.swift in Sources */,
 				119FE02B260170DA001BA5B8 /* OracleCoreDataModel.xcdatamodeld in Sources */,
@@ -586,6 +597,7 @@
 				119B5F5A25C2144C00ECBFF7 /* UIViewController+Extensions.swift in Sources */,
 				117E5B1E25BB823600B93E74 /* UILabel+Extensions.swift in Sources */,
 				119B5F4625C20EF000ECBFF7 /* OracleListCoordinator.swift in Sources */,
+				11F8FB112603D19100899CE4 /* OnboardingViewModel.swift in Sources */,
 				11D80A7925C9FFC900AEAE1C /* OracleGameStepTwoCoordinator.swift in Sources */,
 				1127822325B5C1BE0072F547 /* AppDelegate.swift in Sources */,
 				11AA720C25C4506B00A3185C /* OracleGameStepOneCoordinator.swift in Sources */,
