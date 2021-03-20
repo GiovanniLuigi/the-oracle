@@ -15,8 +15,8 @@ class OracleGameStepTwoCollectionViewCell: UICollectionViewCell {
     
     override  func awakeFromNib() {
         super.awakeFromNib()
+        cardBackgroundView.clipsToBounds = true
         cardBackgroundView.layer.cornerRadius = 20
-        
     }
     
     func update(with viewModel: OracleGameStepTwoCellViewModel) {

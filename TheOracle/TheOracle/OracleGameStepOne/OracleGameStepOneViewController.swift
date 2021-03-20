@@ -19,6 +19,11 @@ class OracleGameStepOneViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         title = viewModel.title
+        oracleImageView.image = UIImage(named: "ball")
+        
+        UIView.animate(withDuration: 3.0, delay: 0, options: [.repeat, .autoreverse], animations: {
+            self.oracleImageView.transform = CGAffineTransform(scaleX: 0.6, y: 0.6)
+        })
         
         preparationDescription.text = viewModel.preparationDescription
         

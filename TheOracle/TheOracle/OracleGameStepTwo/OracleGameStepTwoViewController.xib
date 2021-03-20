@@ -21,8 +21,8 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="sMA-Ua-sBI">
-                    <rect key="frame" x="0.0" y="44" width="414" height="818"/>
-                    <color key="backgroundColor" red="0.55294501780000005" green="0.55293428899999997" blue="0.55294150109999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                    <rect key="frame" x="16" y="44" width="382" height="818"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="QUQ-g1-C3e">
                         <size key="itemSize" width="128" height="128"/>
                         <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -34,9 +34,9 @@
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="sMA-Ua-sBI" secondAttribute="trailing" id="Blp-Tj-XcG"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="sMA-Ua-sBI" secondAttribute="trailing" constant="16" id="Blp-Tj-XcG"/>
                 <constraint firstItem="sMA-Ua-sBI" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="Ipk-JB-9fv"/>
-                <constraint firstItem="sMA-Ua-sBI" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="LwJ-AB-zFi"/>
+                <constraint firstItem="sMA-Ua-sBI" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="LwJ-AB-zFi"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="sMA-Ua-sBI" secondAttribute="bottom" id="sZa-J9-9cV"/>
             </constraints>
             <point key="canvasLocation" x="-196" y="104"/>
