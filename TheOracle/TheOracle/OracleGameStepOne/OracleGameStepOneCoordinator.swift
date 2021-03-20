@@ -29,8 +29,8 @@ final class OracleGameStepOneCoordinator: Coordinator {
         navigationController.pushViewController(oracleGameStepOneViewController, animated: true)
     }
     
-    func startGameStepTwo(logoURL: String, oracleID: Int, cardCount: Int) {
-        let oracleGameStepTwoCoordinator = OracleGameStepTwoCoordinator(navigationController: navigationController, parentCoordinator: self, logoURL: logoURL, oracleID: oracleID, cardCount: cardCount)
+    func startGameStepTwo(oracleID: String, cardCount: Int, cardBackURL: String) {
+        let oracleGameStepTwoCoordinator = OracleGameStepTwoCoordinator(navigationController: navigationController, parentCoordinator: self, oracleID: oracleID, cardCount: cardCount, cardBackURL: cardBackURL)
         childCoordinators.append(oracleGameStepTwoCoordinator)
         oracleGameStepTwoCoordinator.start()
     }

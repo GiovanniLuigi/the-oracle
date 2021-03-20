@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import FirebaseStorage
 
 class OnboardingViewController: UIPageViewController {
     

@@ -17,9 +17,9 @@ struct OracleGameStepTwoViewModel {
     private let cells = [OracleGameStepTwoCellViewModel]()
     
     let coordinator: OracleGameStepTwoCoordinator
-    let logoURL: String
-    let oracleID: Int
+    let oracleID: String
     let cardCount: Int
+    let cardBackURL: String
     
     func shouldBack() {
         coordinator.stop()
@@ -30,7 +30,7 @@ struct OracleGameStepTwoViewModel {
     }
     
     func cellViewModel(at row: Int) -> OracleGameStepTwoCellViewModel {
-        return OracleGameStepTwoCellViewModel(description: "Test", title: "Test", logoURL: logoURL)
+        return OracleGameStepTwoCellViewModel(cardBackURL: cardBackURL)
     }
     
     func didSelectCard(at row: Int) {

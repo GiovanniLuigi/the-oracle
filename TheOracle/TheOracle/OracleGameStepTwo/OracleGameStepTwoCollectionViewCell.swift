@@ -10,7 +10,6 @@ import UIKit
 
 class OracleGameStepTwoCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var logoImageView: UIImageView!
-    
     @IBOutlet weak var cardBackgroundView: UIView!
     
     
@@ -21,7 +20,7 @@ class OracleGameStepTwoCollectionViewCell: UICollectionViewCell {
     }
     
     func update(with viewModel: OracleGameStepTwoCellViewModel) {
-        logoImageView.setImage(from: viewModel.logoURL)
+        logoImageView.setImage(from: viewModel.cardBackURL)
     }
     
 }

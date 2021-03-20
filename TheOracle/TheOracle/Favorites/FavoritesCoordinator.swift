@@ -26,7 +26,7 @@ final class FavoritesCoordinator: Coordinator {
   
     func startCardDetail(card: CardEntity) {
         let cardDetailViewController = CardDetailViewController.instantiate()
-        let viewModel = CardDetailViewModel(oracleID: -1, cardCount: -1, viewDelegate: cardDetailViewController, delegate: self)
+        let viewModel = CardDetailViewModel(oracleID: "", cardCount: -1, viewDelegate: cardDetailViewController, delegate: self)
         viewModel.isFavorite = true
         viewModel.cardID = card.id ?? ""
         

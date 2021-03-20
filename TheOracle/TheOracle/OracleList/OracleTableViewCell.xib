@@ -20,12 +20,6 @@
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="X9Z-aF-UDQ">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="210"/>
                     </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" text="Nature Oracle" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumFontSize="22" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="UbU-9l-E6X">
-                        <rect key="frame" x="18" y="18" width="161.5" height="144"/>
-                        <fontDescription key="fontDescription" name="DINCondensed-Bold" family="DIN Condensed" pointSize="72"/>
-                        <nil key="textColor"/>
-                        <nil key="highlightedColor"/>
-                    </label>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="infoLight" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kqc-0c-hZr">
                         <rect key="frame" x="277" y="18" width="25" height="24"/>
                         <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -36,22 +30,17 @@
                 </subviews>
                 <color key="backgroundColor" red="0.92509310233160624" green="0.92509310233160624" blue="0.92509310233160624" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                 <constraints>
-                    <constraint firstItem="kqc-0c-hZr" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="UbU-9l-E6X" secondAttribute="trailing" constant="18" id="2KB-TY-d6I"/>
                     <constraint firstItem="X9Z-aF-UDQ" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="9YE-67-pna"/>
-                    <constraint firstItem="X9Z-aF-UDQ" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="UbU-9l-E6X" secondAttribute="bottom" constant="18" id="EhB-ny-QGR"/>
                     <constraint firstAttribute="trailing" secondItem="X9Z-aF-UDQ" secondAttribute="trailing" id="Fnz-Vw-jHz"/>
                     <constraint firstItem="X9Z-aF-UDQ" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="aJI-Aq-nOL"/>
-                    <constraint firstItem="UbU-9l-E6X" firstAttribute="top" secondItem="X9Z-aF-UDQ" secondAttribute="top" constant="18" id="dqr-9t-dEm"/>
                     <constraint firstItem="kqc-0c-hZr" firstAttribute="trailing" secondItem="X9Z-aF-UDQ" secondAttribute="trailing" constant="-18" id="lBN-UP-Vg1"/>
                     <constraint firstAttribute="bottom" secondItem="X9Z-aF-UDQ" secondAttribute="bottom" id="v49-3W-gda"/>
                     <constraint firstItem="X9Z-aF-UDQ" firstAttribute="top" secondItem="kqc-0c-hZr" secondAttribute="top" constant="-18" id="weT-yQ-dKc"/>
-                    <constraint firstItem="UbU-9l-E6X" firstAttribute="leading" secondItem="X9Z-aF-UDQ" secondAttribute="leading" constant="18" id="zU9-05-Agy"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
                 <outlet property="backgroundImage" destination="X9Z-aF-UDQ" id="xeR-NB-pxN"/>
-                <outlet property="title" destination="UbU-9l-E6X" id="ubJ-DA-5e4"/>
             </connections>
             <point key="canvasLocation" x="137.68115942028987" y="110.49107142857143"/>
         </tableViewCell>

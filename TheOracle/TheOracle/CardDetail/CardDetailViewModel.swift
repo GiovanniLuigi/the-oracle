@@ -27,7 +27,7 @@ final class CardDetailViewModel {
     let backButtonTitle: String = "Back to home"
     let saveButtonTitle: String = "Save this message"
     
-    let oracleID: Int
+    let oracleID: String
     let cardCount: Int
     let client: Network
     let viewDelegate: CardDetailViewDelegate
@@ -37,7 +37,7 @@ final class CardDetailViewModel {
     var cardID: String?
     var isFavorite: Bool = false
     
-    init(oracleID: Int, cardCount: Int, viewDelegate: CardDetailViewDelegate, delegate: CardDetailDelegate) {
+    init(oracleID: String, cardCount: Int, viewDelegate: CardDetailViewDelegate, delegate: CardDetailDelegate) {
         self.oracleID = oracleID
         self.cardCount = cardCount
         self.viewDelegate = viewDelegate

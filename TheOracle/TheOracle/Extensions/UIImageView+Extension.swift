@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import FirebaseStorage
 
 extension UIImageView {
     
@@ -15,17 +16,22 @@ extension UIImageView {
             image = placeholder
         }
         
-        guard let url = URL(string: url) else {
-            return
-        }
+        let storage = Storage.storage()
         
         DispatchQueue.global().async { [weak self] in
-            if let data = try? Data(contentsOf: url) {
-                DispatchQueue.main.async {
-                    self?.image = UIImage(data: data)
+            storage.reference(withPath: url).getData(maxSize: 1024*1000*500) { (data, error) in
+                if error != nil {
+                    return
+                }
+                
+                if let data = data {
+                    DispatchQueue.main.async {
+                        self?.image = UIImage(data: data)
+                    }
                 }
             }
         }
+        
     }
     
 }

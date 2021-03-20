@@ -19,7 +19,7 @@ class OracleGameStepOneViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         title = viewModel.title
-        oracleImageView.setImage(from: viewModel.cardLogoURL)
+        
         preparationDescription.text = viewModel.preparationDescription
         
         let newBackButton = UIBarButtonItem(title: viewModel.backButtonTitle, style: UIBarButtonItem.Style.plain, target: self, action: #selector(didTapLeaveGame))

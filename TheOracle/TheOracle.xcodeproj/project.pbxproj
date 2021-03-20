@@ -66,8 +66,8 @@
 		11F8FB112603D19100899CE4 /* OnboardingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11F8FB102603D19100899CE4 /* OnboardingViewModel.swift */; };
 		11F8FB162604BFDA00899CE4 /* OnboardingPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11F8FB142604BFDA00899CE4 /* OnboardingPageViewController.swift */; };
 		11F8FB172604BFDA00899CE4 /* OnboardingPageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 11F8FB152604BFDA00899CE4 /* OnboardingPageViewController.xib */; };
-		55DDB071AD6F8B4FA5797E15 /* Pods_TheOracle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5D4C7E8FDDBD4C516C5C71C /* Pods_TheOracle.framework */; };
-		8F5E9002EE263B63F185339E /* Pods_TheOracleTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E12C94F3609E72F6BC49BDBD /* Pods_TheOracleTests.framework */; };
+		452868A17407835DDDF3FE53 /* Pods_TheOracleTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8BFBD4220AA2E19CED0574B4 /* Pods_TheOracleTests.framework */; };
+		ED2522B4CFEB2DA86809E49E /* Pods_TheOracle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 76B41471BFA09BF9AB3DCEFE /* Pods_TheOracle.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -144,12 +144,12 @@
 		11F8FB102603D19100899CE4 /* OnboardingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewModel.swift; sourceTree = "<group>"; };
 		11F8FB142604BFDA00899CE4 /* OnboardingPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingPageViewController.swift; sourceTree = "<group>"; };
 		11F8FB152604BFDA00899CE4 /* OnboardingPageViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OnboardingPageViewController.xib; sourceTree = "<group>"; };
-		51280FE6DC848B650A9C5729 /* Pods-TheOracleTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TheOracleTests.debug.xcconfig"; path = "Target Support Files/Pods-TheOracleTests/Pods-TheOracleTests.debug.xcconfig"; sourceTree = "<group>"; };
-		7BC1B5010FEE74751326A75E /* Pods-TheOracle.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TheOracle.release.xcconfig"; path = "Target Support Files/Pods-TheOracle/Pods-TheOracle.release.xcconfig"; sourceTree = "<group>"; };
-		81F5832B5D52257967B8C8F6 /* Pods-TheOracle.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TheOracle.debug.xcconfig"; path = "Target Support Files/Pods-TheOracle/Pods-TheOracle.debug.xcconfig"; sourceTree = "<group>"; };
-		C836E32E4396FF6064D86EE8 /* Pods-TheOracleTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TheOracleTests.release.xcconfig"; path = "Target Support Files/Pods-TheOracleTests/Pods-TheOracleTests.release.xcconfig"; sourceTree = "<group>"; };
-		D5D4C7E8FDDBD4C516C5C71C /* Pods_TheOracle.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TheOracle.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		E12C94F3609E72F6BC49BDBD /* Pods_TheOracleTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TheOracleTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2047338F3B11317E3B8888EC /* Pods-TheOracleTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TheOracleTests.debug.xcconfig"; path = "Target Support Files/Pods-TheOracleTests/Pods-TheOracleTests.debug.xcconfig"; sourceTree = "<group>"; };
+		510CDB62665872790B5BAD32 /* Pods-TheOracle.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TheOracle.release.xcconfig"; path = "Target Support Files/Pods-TheOracle/Pods-TheOracle.release.xcconfig"; sourceTree = "<group>"; };
+		76B41471BFA09BF9AB3DCEFE /* Pods_TheOracle.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TheOracle.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8BFBD4220AA2E19CED0574B4 /* Pods_TheOracleTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TheOracleTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E8D7C46B3430FF65B356F7C0 /* Pods-TheOracleTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TheOracleTests.release.xcconfig"; path = "Target Support Files/Pods-TheOracleTests/Pods-TheOracleTests.release.xcconfig"; sourceTree = "<group>"; };
+		F3ABB43EF47CF4BBEFA93992 /* Pods-TheOracle.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TheOracle.debug.xcconfig"; path = "Target Support Files/Pods-TheOracle/Pods-TheOracle.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -157,7 +157,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				55DDB071AD6F8B4FA5797E15 /* Pods_TheOracle.framework in Frameworks */,
+				ED2522B4CFEB2DA86809E49E /* Pods_TheOracle.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -165,7 +165,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8F5E9002EE263B63F185339E /* Pods_TheOracleTests.framework in Frameworks */,
+				452868A17407835DDDF3FE53 /* Pods_TheOracleTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -179,7 +179,7 @@
 				1127823825B5C1BF0072F547 /* TheOracleTests */,
 				1127822025B5C1BE0072F547 /* Products */,
 				168CEB87BBFBE5E18760E149 /* Pods */,
-				270D40B5834FDF6B40E364FA /* Frameworks */,
+				E5396D2F280B87F122874883 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -382,19 +382,19 @@
 		168CEB87BBFBE5E18760E149 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				81F5832B5D52257967B8C8F6 /* Pods-TheOracle.debug.xcconfig */,
-				7BC1B5010FEE74751326A75E /* Pods-TheOracle.release.xcconfig */,
-				51280FE6DC848B650A9C5729 /* Pods-TheOracleTests.debug.xcconfig */,
-				C836E32E4396FF6064D86EE8 /* Pods-TheOracleTests.release.xcconfig */,
+				F3ABB43EF47CF4BBEFA93992 /* Pods-TheOracle.debug.xcconfig */,
+				510CDB62665872790B5BAD32 /* Pods-TheOracle.release.xcconfig */,
+				2047338F3B11317E3B8888EC /* Pods-TheOracleTests.debug.xcconfig */,
+				E8D7C46B3430FF65B356F7C0 /* Pods-TheOracleTests.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
 		};
-		270D40B5834FDF6B40E364FA /* Frameworks */ = {
+		E5396D2F280B87F122874883 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				D5D4C7E8FDDBD4C516C5C71C /* Pods_TheOracle.framework */,
-				E12C94F3609E72F6BC49BDBD /* Pods_TheOracleTests.framework */,
+				76B41471BFA09BF9AB3DCEFE /* Pods_TheOracle.framework */,
+				8BFBD4220AA2E19CED0574B4 /* Pods_TheOracleTests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -406,11 +406,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1127823E25B5C1BF0072F547 /* Build configuration list for PBXNativeTarget "TheOracle" */;
 			buildPhases = (
-				525A98544C6D29B528EBB0E6 /* [CP] Check Pods Manifest.lock */,
+				5DB4B29418307D0C0CC067D1 /* [CP] Check Pods Manifest.lock */,
 				1127821B25B5C1BE0072F547 /* Sources */,
 				1127821C25B5C1BE0072F547 /* Frameworks */,
 				1127821D25B5C1BE0072F547 /* Resources */,
-				D1237E03A19652B9238A157B /* [CP] Embed Pods Frameworks */,
+				3E4F71C97CF7D8AEF76E521A /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -425,7 +425,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1127824125B5C1BF0072F547 /* Build configuration list for PBXNativeTarget "TheOracleTests" */;
 			buildPhases = (
-				0FDBBFA9D73DEA40DC7C7473 /* [CP] Check Pods Manifest.lock */,
+				51A3B63323C991AC95DD254B /* [CP] Check Pods Manifest.lock */,
 				1127823125B5C1BF0072F547 /* Sources */,
 				1127823225B5C1BF0072F547 /* Frameworks */,
 				1127823325B5C1BF0072F547 /* Resources */,
@@ -509,7 +509,24 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		0FDBBFA9D73DEA40DC7C7473 /* [CP] Check Pods Manifest.lock */ = {
+		3E4F71C97CF7D8AEF76E521A /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TheOracle/Pods-TheOracle-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TheOracle/Pods-TheOracle-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-TheOracle/Pods-TheOracle-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		51A3B63323C991AC95DD254B /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -531,7 +548,7 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		525A98544C6D29B528EBB0E6 /* [CP] Check Pods Manifest.lock */ = {
+		5DB4B29418307D0C0CC067D1 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -551,23 +568,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		D1237E03A19652B9238A157B /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-TheOracle/Pods-TheOracle-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-TheOracle/Pods-TheOracle-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-TheOracle/Pods-TheOracle-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -762,7 +762,7 @@
 		};
 		1127823F25B5C1BF0072F547 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 81F5832B5D52257967B8C8F6 /* Pods-TheOracle.debug.xcconfig */;
+			baseConfigurationReference = F3ABB43EF47CF4BBEFA93992 /* Pods-TheOracle.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -781,7 +781,7 @@
 		};
 		1127824025B5C1BF0072F547 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 7BC1B5010FEE74751326A75E /* Pods-TheOracle.release.xcconfig */;
+			baseConfigurationReference = 510CDB62665872790B5BAD32 /* Pods-TheOracle.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -800,7 +800,7 @@
 		};
 		1127824225B5C1BF0072F547 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 51280FE6DC848B650A9C5729 /* Pods-TheOracleTests.debug.xcconfig */;
+			baseConfigurationReference = 2047338F3B11317E3B8888EC /* Pods-TheOracleTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -823,7 +823,7 @@
 		};
 		1127824325B5C1BF0072F547 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C836E32E4396FF6064D86EE8 /* Pods-TheOracleTests.release.xcconfig */;
+			baseConfigurationReference = E8D7C46B3430FF65B356F7C0 /* Pods-TheOracleTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";

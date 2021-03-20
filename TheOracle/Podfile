@@ -6,6 +6,7 @@ target 'TheOracle' do
   use_frameworks!
 
   # Pods for TheOracle
+  pod 'Firebase/Storage'
   pod 'Firebase/Database'
   target 'TheOracleTests' do
     inherit! :search_paths

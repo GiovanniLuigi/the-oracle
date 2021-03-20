@@ -28,13 +28,13 @@ struct Network {
     }
     
     private init() {
-        Database.database().isPersistenceEnabled = true
+        Database.database().isPersistenceEnabled = false
         ref = Database.database().reference()
         
     }
     
     func observeOracles(completion: @escaping (Result<[Oracle], NetworkError>) -> Void) {
-        oraclesRef.observe(.value) { (snapshot) in
+        oraclesRef.observeSingleEvent(of: .value) { (snapshot) in
             if let oracles = snapshot.decode(type: [Oracle].self) {
                 DispatchQueue.main.async {
                     completion(.success(oracles))

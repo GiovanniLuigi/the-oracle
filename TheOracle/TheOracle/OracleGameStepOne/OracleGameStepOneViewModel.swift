@@ -10,20 +10,21 @@ import UIKit
 
 
 final class OracleGameStepOneViewModel {
-    let cardLogoURL: String
+    
     let preparationDescription: String
     let title: String
     let cardCount: Int
-    let oracleID: Int
+    let oracleID: String
     
     let alertMessage = "Leaving now would make you lose all your progress"
     let alertTitle = String.empty
     let backButtonTitle = "Quit"
+    let cardBackURL: String
     
     weak var coordinator: OracleGameStepOneCoordinator?
     
-    init(cardLogoURL: String, preparationDescription: String, title: String, cardCount: Int, oracleID: Int) {
-        self.cardLogoURL = cardLogoURL
+    init(preparationDescription: String, title: String, cardCount: Int, oracleID: String, cardBackURL: String) {
+        self.cardBackURL = cardBackURL
         self.preparationDescription = preparationDescription
         self.title = title
         self.cardCount = cardCount
@@ -35,6 +36,6 @@ final class OracleGameStepOneViewModel {
     }
 
     func startStepTwo() {
-        coordinator?.startGameStepTwo(logoURL: cardLogoURL, oracleID: oracleID, cardCount: cardCount)
+        coordinator?.startGameStepTwo(oracleID: oracleID, cardCount: cardCount, cardBackURL: cardBackURL)
     }
 }

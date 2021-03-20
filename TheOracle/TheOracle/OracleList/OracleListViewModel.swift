@@ -41,7 +41,7 @@ final class OracleListViewModel {
     
     func cellViewModel(for row: Int) -> OracleCellViewModel {
         let oracle = oracles[row]
-        return OracleCellViewModel(title: oracle.title, imageName: oracle.imageURL, description: oracle.description, startTooltip: startTooltop)
+        return OracleCellViewModel(title: oracle.title, imageName: oracle.coverImageURL, description: oracle.description, startTooltip: startTooltop)
     }
     
     private func startTooltop(viewModel: OracleCellViewModel) {
@@ -50,7 +50,7 @@ final class OracleListViewModel {
     
     func didTapCell(at row: Int) {
         let oracle = oracles[row]
-        coordinator.startOracleGameStepOne(viewModel: OracleGameStepOneViewModel(cardLogoURL: oracle.logoURL, preparationDescription: oracle.preparationDescription, title: oracle.title, cardCount: oracle.cardCount, oracleID: oracle.oracleID))
+        coordinator.startOracleGameStepOne(viewModel: OracleGameStepOneViewModel(preparationDescription: oracle.preparationDescription, title: oracle.title, cardCount: oracle.cardCount, oracleID: oracle.oracleID, cardBackURL: oracle.backImageURL))
     }
     
     func startFavorites() {

@@ -9,7 +9,5 @@
 import Foundation
 
 struct OracleGameStepTwoCellViewModel {
-    let description: String
-    let title: String
-    let logoURL: String
+    let cardBackURL: String
 }

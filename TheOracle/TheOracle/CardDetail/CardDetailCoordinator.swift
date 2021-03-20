@@ -12,10 +12,10 @@ import UIKit
 final class CardDetailCoordinator: Coordinator {
     private(set) var childCoordinators: [Coordinator] = []
     private let navigationController: UINavigationController
-    private let oracleID: Int
+    private let oracleID: String
     private let cardCount: Int
     
-    init(navigationController: UINavigationController, oracleID: Int, cardCount: Int) {
+    init(navigationController: UINavigationController, oracleID: String, cardCount: Int) {
         self.navigationController = navigationController
         self.oracleID = oracleID
         self.cardCount = cardCount

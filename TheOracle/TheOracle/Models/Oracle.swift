@@ -11,10 +11,10 @@ import Foundation
 
 struct Oracle: Codable {
     let title: String
-    let imageURL: String
+    let coverImageURL: String
     let description: String
     let preparationDescription: String
-    let logoURL: String
-    let oracleID: Int
+    let backImageURL: String
+    let oracleID: String
     let cardCount: Int
 }
