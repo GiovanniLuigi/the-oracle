@@ -51,6 +51,6 @@
         </tableViewCell>
     </objects>
     <resources>
-        <image name="question_mark" width="50" height="50"/>
+        <image name="question_mark" width="16.5" height="16.5"/>
     </resources>
 </document>

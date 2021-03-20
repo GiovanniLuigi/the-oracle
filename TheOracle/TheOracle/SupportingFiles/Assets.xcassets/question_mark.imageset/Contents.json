@@ -1,15 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "question_mark.png",
+      "filename" : "question_mark@1x.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
+      "filename" : "question_mark@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
+      "filename" : "question_mark@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }
