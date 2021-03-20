@@ -53,7 +53,7 @@ final class CardDetailViewModel {
                 return
             }
             
-            self.card = OracleCard(id: cardID, title: card.title ?? "", description: card.text ?? "", imageURL: card.imageURL ?? "")
+            self.card = OracleCard(cid: cardID, title: card.title ?? "", description: card.text ?? "", imageURL: card.imageURL ?? "")
             self.viewDelegate.viewModelDidFetchCardWithSuccess(card: self.card!)
         } else {
             let cardId = "\(oracleID)\(Int.random(in: 1...cardCount))"
@@ -78,18 +78,18 @@ final class CardDetailViewModel {
             return
         }
         
-        let fetchRequest: NSFetchRequest<CardEntity> = CardEntity.fetchRequestById(card.id)
+        let fetchRequest: NSFetchRequest<CardEntity> = CardEntity.fetchRequestById(card.cid)
         
         let cards = try? dataSource.viewContext.fetch(fetchRequest)
         
         if let cardEntity = cards?.first {
-            cardEntity.id = card.id
+            cardEntity.id = card.cid
             cardEntity.imageURL = card.imageURL
             cardEntity.text = card.description
             cardEntity.title = card.title
         } else {
             let cardEntity = CardEntity(context: dataSource.viewContext)
-            cardEntity.id = card.id
+            cardEntity.id = card.cid
             cardEntity.imageURL = card.imageURL
             cardEntity.text = card.description
             cardEntity.title = card.title

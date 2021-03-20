@@ -11,9 +11,17 @@ import FirebaseStorage
 
 extension UIImageView {
     
+    
     func setImage(from url: String, placeholder: UIImage? = nil) {
         if let placeholder = placeholder {
             image = placeholder
+        }
+        
+        let imageCache = CacheManager.shared.imageCache
+        
+        if let cachedImage = imageCache.object(forKey: url as NSString) {
+            image = cachedImage
+            return
         }
         
         let storage = Storage.storage()
@@ -26,7 +34,10 @@ extension UIImageView {
                 
                 if let data = data {
                     DispatchQueue.main.async {
-                        self?.image = UIImage(data: data)
+                        if let newImage = UIImage(data: data) {
+                            imageCache.setObject(newImage, forKey: url as NSString)
+                            self?.image = newImage
+                        }
                     }
                 }
             }

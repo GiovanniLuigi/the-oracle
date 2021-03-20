@@ -20,9 +20,14 @@
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="X9Z-aF-UDQ">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="210"/>
                     </imageView>
-                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="infoLight" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kqc-0c-hZr">
-                        <rect key="frame" x="277" y="18" width="25" height="24"/>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kqc-0c-hZr">
+                        <rect key="frame" x="287" y="8" width="25" height="25"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="25" id="IVa-kk-wF5"/>
+                            <constraint firstAttribute="width" constant="25" id="o0w-cq-3oH"/>
+                        </constraints>
                         <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <state key="normal" image="question_mark"/>
                         <connections>
                             <action selector="didTapTooltip:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="KDz-Im-5JN"/>
                         </connections>
@@ -33,9 +38,9 @@
                     <constraint firstItem="X9Z-aF-UDQ" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="9YE-67-pna"/>
                     <constraint firstAttribute="trailing" secondItem="X9Z-aF-UDQ" secondAttribute="trailing" id="Fnz-Vw-jHz"/>
                     <constraint firstItem="X9Z-aF-UDQ" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="aJI-Aq-nOL"/>
-                    <constraint firstItem="kqc-0c-hZr" firstAttribute="trailing" secondItem="X9Z-aF-UDQ" secondAttribute="trailing" constant="-18" id="lBN-UP-Vg1"/>
+                    <constraint firstItem="kqc-0c-hZr" firstAttribute="trailing" secondItem="X9Z-aF-UDQ" secondAttribute="trailing" constant="-8" id="lBN-UP-Vg1"/>
                     <constraint firstAttribute="bottom" secondItem="X9Z-aF-UDQ" secondAttribute="bottom" id="v49-3W-gda"/>
-                    <constraint firstItem="X9Z-aF-UDQ" firstAttribute="top" secondItem="kqc-0c-hZr" secondAttribute="top" constant="-18" id="weT-yQ-dKc"/>
+                    <constraint firstItem="X9Z-aF-UDQ" firstAttribute="top" secondItem="kqc-0c-hZr" secondAttribute="top" constant="-8" id="weT-yQ-dKc"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
@@ -45,4 +50,7 @@
             <point key="canvasLocation" x="137.68115942028987" y="110.49107142857143"/>
         </tableViewCell>
     </objects>
+    <resources>
+        <image name="question_mark" width="50" height="50"/>
+    </resources>
 </document>
