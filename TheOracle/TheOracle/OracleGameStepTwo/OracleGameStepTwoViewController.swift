@@ -35,7 +35,7 @@ class OracleGameStepTwoViewController: UIViewController {
 
 extension OracleGameStepTwoViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return viewModel.numOfItems(in: section)
+        return viewModel.numberOfItems(in: section)
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {

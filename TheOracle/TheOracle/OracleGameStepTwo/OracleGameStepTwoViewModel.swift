@@ -13,9 +13,7 @@ struct OracleGameStepTwoViewModel {
     let alertTitle = String.empty
     let backButtonTitle = "Quit"
     let title: String = "Oracle selection"
-    
-    private let cells = [OracleGameStepTwoCellViewModel]()
-    
+        
     let coordinator: OracleGameStepTwoCoordinator
     let oracleID: String
     let cardCount: Int
@@ -25,8 +23,8 @@ struct OracleGameStepTwoViewModel {
         coordinator.stop()
     }
     
-    func numOfItems(in section: Int) -> Int {
-        return 6
+    func numberOfItems(in section: Int) -> Int {
+        return cardCount
     }
     
     func cellViewModel(at row: Int) -> OracleGameStepTwoCellViewModel {
