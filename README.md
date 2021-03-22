@@ -1,35 +1,32 @@
-# the-oracle
-Revealing... Transcending 
+
+# The Oracle 
+# This app is an Oracle Deck Collection. To play the user choose a deck, then meditate on an answer that he would like to be answered by the universe, then he chooses a card and finally the app shows him the selected card.
 
 
-This app is an Oracle Deck Collection. To play the user choose a deck, then meditate on an answer that he would like to be answered by the universe, then he chooses a card and finally the app shows him the selected card.
-The API is custom and is created at firebase.
+# Implementation
 
-In this screen the user can select which deck he wants to play with (for now there is only one available):
+OracleListViewController - This is the screen where the oracle decks are shown. It is an table view that shows the data fetched from the backend. From this screen you can see your favorites, see each deck's details from tapping the question mark icon on the cell and start the game by tapping the tableview cell.
 
-![deck_selection](https://user-images.githubusercontent.com/15925863/112013123-8efee200-8b08-11eb-9f58-4cc2f5b74680.png)
+OracleGameStepOneViewController - This screen display an message and can go to the game step two.
 
+OracleGameStepTwoViewController - This screen allows the user to select one card and can go to the card detail.
 
-In this screen the user can meditate on his question to the universe:
+OracleDetailViewController - This screen display the card image and text. You can also save that particular card as your favorite or share it.
 
-![question](https://user-images.githubusercontent.com/15925863/112013380-c2da0780-8b08-11eb-997c-c47b4c9d90ab.png)
+FavoritesViewController - Displays a list of your favorite cards.
 
-In this screen he can select the card that he feels a strong connection:
+OnboardingViewController - Only shows on the first app open, explain how the app works.
 
-![card_selection](https://user-images.githubusercontent.com/15925863/112013823-1cdacd00-8b09-11eb-9f23-8b7960e4a4b2.png)
+OracleDetailViewController - Displays an card overlay explainig a little bit more about how that particular deck works.
 
-In this screen the selected card presents itself to the user and shares the universe message:
+The API is custom and is created using firebase.
 
-![card_details](https://user-images.githubusercontent.com/15925863/112013861-26fccb80-8b09-11eb-8773-f994d102d473.png)
+# How to build
 
-The user can share his card:
+To build you need cocoapods installed, the version used here is 1.10.1. 
+Go to the project folder in the terminal and type pod install. Then open the .xcworspace generated.
 
-![share_card](https://user-images.githubusercontent.com/15925863/112013909-32e88d80-8b09-11eb-9e59-56627e37f6d9.png)
+# Requirements
 
-The user can save his card:
-
-![save_card](https://user-images.githubusercontent.com/15925863/112013944-3a0f9b80-8b09-11eb-9cd5-8c1d3c8a7298.png)
-
-In this screen the user can see his saved cards:
-
-![favorites](https://user-images.githubusercontent.com/15925863/112013983-41cf4000-8b09-11eb-99c4-6b8a4c6814b6.png)
+Xcode 12
+Swift 5
