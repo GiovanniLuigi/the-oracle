@@ -20,6 +20,7 @@ class FavoritesViewModel {
     var errorMessage: String = "An error ocurred"
     let viewDelegate: FavoritesViewDelegate
     let coordinator: FavoritesCoordinator
+    let title: String = "Favorites"
     
     init(viewDelegate: FavoritesViewDelegate, coordinator: FavoritesCoordinator) {
         self.viewDelegate = viewDelegate

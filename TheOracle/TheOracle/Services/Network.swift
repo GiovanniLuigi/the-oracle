@@ -33,7 +33,7 @@ struct Network {
         ref = Database.database().reference()
     }
     
-    func getOracles(completion: @escaping (Result<[Oracle], NetworkError>) -> Void) {
+    private func fetchWithTimeout(reference: DatabaseReference, completion: @escaping (Result<DataSnapshot, NetworkError>) -> Void) {
         var didComplete: Bool = false
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 30.0) {
@@ -46,32 +46,43 @@ struct Network {
             }
         }
         
-        self.oraclesRef.observeSingleEvent(of: .value) { (snapshot) in
+        reference.observeSingleEvent(of: .value) { (snapshot) in
             if !didComplete {
                 didComplete = true
-                if let oracles = snapshot.decode(type: [Oracle].self) {
-                    DispatchQueue.main.async {
-                        completion(.success(oracles))
-                    }
-                } else {
-                    DispatchQueue.main.async {
-                        completion(.failure(.genericError))
-                    }
+                DispatchQueue.main.async {
+                    completion(.success(snapshot))
                 }
             }
         }
     }
     
-    func getCard(id: String, completion: @escaping (Result<OracleCard, NetworkError>) -> Void) {
-        ref.child(id).observeSingleEvent(of: .value) { (snapshot) in
-            if let card = snapshot.decode(type: OracleCard.self) {
-                DispatchQueue.main.async {
-                    completion(.success(card))
-                }
-            } else {
-                DispatchQueue.main.async {
+    func getOracles(completion: @escaping (Result<[Oracle], NetworkError>) -> Void) {
+        fetchWithTimeout(reference: oraclesRef) { (result) in
+            switch result {
+            case .success(let snapshot):
+                if let oracles = snapshot.decode(type: [Oracle].self) {
+                    completion(.success(oracles))
+                } else {
                     completion(.failure(.genericError))
                 }
+            case .failure(let error):
+                completion(.failure(error))
+            }
+        }
+    }
+    
+    
+    func getCard(id: String, completion: @escaping (Result<OracleCard, NetworkError>) -> Void) {
+        fetchWithTimeout(reference: ref.child(id)) { (result) in
+            switch result {
+            case .success(let snapshot):
+                if let card = snapshot.decode(type: OracleCard.self) {
+                    completion(.success(card))
+                } else {
+                    completion(.failure(.genericError))
+                }
+            case .failure(let error):
+                completion(.failure(error))
             }
         }
     }

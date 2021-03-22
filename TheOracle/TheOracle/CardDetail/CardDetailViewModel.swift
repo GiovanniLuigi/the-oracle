@@ -20,7 +20,7 @@ protocol CardDetailViewDelegate {
 }
 
 final class CardDetailViewModel {
-    let title: String = "The lion card"
+    let title: String = ""
     let shareBarButtonTitle: String = "Share"
     let saveBarButtonTitle: String = "Save"
     

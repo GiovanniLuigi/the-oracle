@@ -15,12 +15,15 @@ extension UIImageView {
     func setImage(from url: String, placeholder: UIImage? = nil) {
         if let placeholder = placeholder {
             image = placeholder
+        } else {
+            activityStartAnimating()
         }
         
         let imageCache = CacheManager.shared.imageCache
         
         if let cachedImage = imageCache.object(forKey: url as NSString) {
             image = cachedImage
+            activityStopAnimating()
             return
         }
         
@@ -37,6 +40,7 @@ extension UIImageView {
                         if let newImage = UIImage(data: data) {
                             imageCache.setObject(newImage, forKey: url as NSString)
                             self?.image = newImage
+                            self?.activityStopAnimating()
                         }
                     }
                 }

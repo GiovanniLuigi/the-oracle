@@ -38,6 +38,7 @@ class CardDetailViewController: UIViewController {
     }
     
     func loadCard() {
+        view.activityStartAnimating()
         viewModel.loadCard()
     }
     
@@ -65,9 +66,10 @@ class CardDetailViewController: UIViewController {
     }
     
     private func reloadCardData(card: OracleCard) {
-        cardImageView.setImage(from: card.imageURL)
         cardDescriptionLabel.text = card.description
         title = card.title
+        cardImageView.setImage(from: card.imageURL)
+        
     }
     
     private func showError(error: Error) {
@@ -81,9 +83,11 @@ class CardDetailViewController: UIViewController {
 extension CardDetailViewController: CardDetailViewDelegate {
     func viewModelDidFetchCardWithSuccess(card: OracleCard) {
         reloadCardData(card: card)
+        view.activityStopAnimating()
     }
     
     func viewModelDidFetchCardWithError(error: Error) {
         showError(error: error)
+        view.activityStopAnimating()
     }
 }

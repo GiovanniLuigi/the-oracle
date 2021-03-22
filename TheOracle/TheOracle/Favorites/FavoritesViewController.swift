@@ -14,9 +14,11 @@ class FavoritesViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        title = viewModel.title
         tableView.dataSource = self
         tableView.delegate = self
         tableView.register(FavoritesTableViewCell.nib, forCellReuseIdentifier: FavoritesTableViewCell.reuseIdentifier)
+        view.activityStartAnimating()
         viewModel.load()
     }
 }
@@ -45,6 +47,7 @@ extension FavoritesViewController: UITableViewDataSource {
 
 extension FavoritesViewController: FavoritesViewDelegate {
     func didFetchCardsWithSuccess(_ viewModel: FavoritesViewModel) {
+        view.activityStopAnimating()
         if viewModel.cards.isEmpty {
             presentAlert(title: "Attention", message: "You do not have any favorites yet", okAction: {
                 self.dismiss(animated: true, completion: nil)
@@ -56,6 +59,7 @@ extension FavoritesViewController: FavoritesViewDelegate {
     }
     
     func didFetchCardsWithError(_ viewModel: FavoritesViewModel) {
+        view.activityStopAnimating()
         presentAlert(title: "Error", message: viewModel.errorMessage, okAction: {
             self.dismiss(animated: true, completion: nil)
             viewModel.stop()
