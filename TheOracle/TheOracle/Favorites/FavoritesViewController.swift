@@ -15,8 +15,6 @@ class FavoritesViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         title = viewModel.title
-        tableView.dataSource = self
-        tableView.delegate = self
         tableView.register(FavoritesTableViewCell.nib, forCellReuseIdentifier: FavoritesTableViewCell.reuseIdentifier)
         view.activityStartAnimating()
         viewModel.load()

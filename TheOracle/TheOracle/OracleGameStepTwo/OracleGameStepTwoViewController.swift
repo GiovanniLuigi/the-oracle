@@ -20,8 +20,6 @@ class OracleGameStepTwoViewController: UIViewController {
         navigationItem.leftBarButtonItem = newBackButton
         
         collectionView.register(OracleGameStepTwoCollectionViewCell.nib, forCellWithReuseIdentifier: OracleGameStepTwoCollectionViewCell.reuseIdentifier)
-        collectionView.delegate = self
-        collectionView.dataSource = self
     }
     
     @objc func didTapLeaveGame() {

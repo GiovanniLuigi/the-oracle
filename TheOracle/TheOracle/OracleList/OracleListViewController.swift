@@ -23,8 +23,6 @@ class OracleListViewController: UIViewController {
         navigationController?.navigationBar.prefersLargeTitles = true
         
         viewModel.delegate = self
-        tableView.dataSource = self
-        tableView.delegate = self
         tableView.register(OracleTableViewCell.nib, forCellReuseIdentifier: OracleTableViewCell.reuseIdentifier)
         
         let favoritesBarButton = UIBarButtonItem(title: "Favorites", style: UIBarButtonItem.Style.plain, target: self, action: #selector(didTapFavorites))
