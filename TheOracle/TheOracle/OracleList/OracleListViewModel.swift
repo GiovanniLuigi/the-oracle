@@ -28,7 +28,7 @@ final class OracleListViewModel {
     
     init(coordinator: OracleListCoordinator) {
         self.coordinator = coordinator
-        network.observeOracles { [weak self] (result) in
+        network.getOracles { [weak self] (result) in
             switch result {
             case .success(let oracles):
                 self?.oracles = oracles

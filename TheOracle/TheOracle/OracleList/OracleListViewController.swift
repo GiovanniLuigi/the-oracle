@@ -16,6 +16,8 @@ class OracleListViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        view.activityStartAnimating()
         title = viewModel.title
         
         navigationController?.navigationBar.prefersLargeTitles = true
@@ -41,9 +43,11 @@ extension OracleListViewController: OracleListViewModelDelegate {
     
     func didFetchFetchOracles() {
         tableView.reloadData()
+        view.activityStopAnimating()
     }
     
     func failToFetchOracles() {
+        view.activityStopAnimating()
         presentAlert(title: "Error", message: "Fail to fetch decks", okAction:  {
             self.dismiss(animated: true, completion: nil)
         })

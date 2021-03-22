@@ -21,6 +21,7 @@ struct Network {
     
     enum NetworkError: Error, LocalizedError {
         case genericError
+        case timeout
         
         var errorDescription: String? {
             return "Unable to retrive your data"
@@ -30,27 +31,39 @@ struct Network {
     private init() {
         Database.database().isPersistenceEnabled = false
         ref = Database.database().reference()
-        
     }
     
-    func observeOracles(completion: @escaping (Result<[Oracle], NetworkError>) -> Void) {
-        oraclesRef.observeSingleEvent(of: .value) { (snapshot) in
-            if let oracles = snapshot.decode(type: [Oracle].self) {
+    func getOracles(completion: @escaping (Result<[Oracle], NetworkError>) -> Void) {
+        var didComplete: Bool = false
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 30.0) {
+            if !didComplete {
+                didComplete = true
                 DispatchQueue.main.async {
-                    completion(.success(oracles))
+                    completion(.failure(.timeout))
                 }
-            } else {
-                DispatchQueue.main.async {
-                    completion(.failure(.genericError))
+                return
+            }
+        }
+        
+        self.oraclesRef.observeSingleEvent(of: .value) { (snapshot) in
+            if !didComplete {
+                didComplete = true
+                if let oracles = snapshot.decode(type: [Oracle].self) {
+                    DispatchQueue.main.async {
+                        completion(.success(oracles))
+                    }
+                } else {
+                    DispatchQueue.main.async {
+                        completion(.failure(.genericError))
+                    }
                 }
             }
         }
     }
     
     func getCard(id: String, completion: @escaping (Result<OracleCard, NetworkError>) -> Void) {
-        print(id)
         ref.child(id).observeSingleEvent(of: .value) { (snapshot) in
-            print(snapshot)
             if let card = snapshot.decode(type: OracleCard.self) {
                 DispatchQueue.main.async {
                     completion(.success(card))
