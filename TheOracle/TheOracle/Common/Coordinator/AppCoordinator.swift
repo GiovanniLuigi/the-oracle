@@ -26,7 +26,7 @@ final class AppCoordinator: Coordinator {
             
             childCoordinators.append(oracleListCoordinator)
         } else {
-            let onboardingCoordinator = OnboardingCoordinator(navigationController: navigationController)
+            let onboardingCoordinator = OnboardingCoordinator(navigationController: navigationController, parentCoordinator: self)
             onboardingCoordinator.start()
             
             childCoordinators.append(onboardingCoordinator)
@@ -34,5 +34,13 @@ final class AppCoordinator: Coordinator {
         
         window.rootViewController = navigationController
         window.makeKeyAndVisible()
+    }
+    
+    func stop(_ childCoordinator: Coordinator) {
+        if let index = childCoordinators.firstIndex(where: { coordinator -> Bool in
+            return coordinator === childCoordinator
+        }) {
+            childCoordinators.remove(at: index)
+        }
     }
 }

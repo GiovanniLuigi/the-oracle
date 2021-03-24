@@ -9,6 +9,11 @@
 import UIKit
 
 class OracleDetailViewController: UIViewController {
+    
+    deinit {
+        print("deinit OnboardingViewController")
+    }
+    
     @IBOutlet weak var modalCard: CardView!
     @IBOutlet weak var cardTitle: UILabel!
     @IBOutlet weak var cardDescription: UILabel!

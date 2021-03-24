@@ -11,6 +11,10 @@ import FirebaseStorage
 
 class OnboardingViewController: UIPageViewController {
     
+    deinit {
+        print("deinit OnboardingViewController")
+    }
+    
     @IBOutlet weak var pageControl: UIPageControl!
     var viewModel: OnboardingViewModel!
     var pages: [OnboardingPageViewController] = []
@@ -47,8 +51,8 @@ class OnboardingViewController: UIPageViewController {
         let thirdPage = OnboardingPageViewController.instantiate()
         thirdPage.labelText = "Are you ready to start your journey?"
         thirdPage.index = 2
-        thirdPage.didTapContinueClosure = {
-            self.close()
+        thirdPage.didTapContinueClosure = { [weak self] in
+            self?.close()
         }
         
         pages = [firstPage, secondPage, thirdPage]

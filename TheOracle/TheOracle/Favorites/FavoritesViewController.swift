@@ -9,6 +9,11 @@
 import UIKit
 
 class FavoritesViewController: UIViewController {
+    
+    deinit {
+        print("deinit OnboardingViewController")
+    }
+    
     var viewModel: FavoritesViewModel!
     @IBOutlet weak var tableView: UITableView!
     

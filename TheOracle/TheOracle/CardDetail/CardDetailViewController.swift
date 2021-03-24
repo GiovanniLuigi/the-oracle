@@ -9,6 +9,11 @@
 import UIKit
 
 class CardDetailViewController: UIViewController {
+    
+    deinit {
+        print("deinit OnboardingViewController")
+    }
+    
     @IBOutlet weak var cardImageView: UIImageView!
     @IBOutlet weak var cardDescriptionLabel: UILabel!
     @IBOutlet weak var saveButton: UIButton!
