@@ -8,7 +8,7 @@
 
 import CoreData
 
-protocol FavoritesViewDelegate {
+protocol FavoritesViewDelegate: class {
     func didFetchCardsWithSuccess(_ viewModel: FavoritesViewModel)
     func didFetchCardsWithError(_ viewModel: FavoritesViewModel)
 }
@@ -18,7 +18,7 @@ class FavoritesViewModel {
     
     var cards: [CardEntity] = []
     var errorMessage: String = "An error ocurred"
-    let viewDelegate: FavoritesViewDelegate
+    weak var viewDelegate: FavoritesViewDelegate?
     let coordinator: FavoritesCoordinator
     let title: String = "Favorites"
     
@@ -34,14 +34,14 @@ class FavoritesViewModel {
             let cards = try dataSource.viewContext.fetch(request)
             if cards.isEmpty {
                 errorMessage = "No favorites found"
-                viewDelegate.didFetchCardsWithError(self)
+                viewDelegate?.didFetchCardsWithError(self)
                 return
             }
             
             self.cards = cards
-            viewDelegate.didFetchCardsWithSuccess(self)
+            viewDelegate?.didFetchCardsWithSuccess(self)
         } catch {
-            viewDelegate.didFetchCardsWithError(self)
+            viewDelegate?.didFetchCardsWithError(self)
             return
         }
     }
@@ -53,6 +53,10 @@ class FavoritesViewModel {
     
     func stop() {
         coordinator.stop()
+    }
+    
+    func dismiss() {
+        coordinator.dismiss()
     }
     
 }

@@ -10,10 +10,6 @@ import UIKit
 
 class OracleGameStepOneViewController: UIViewController {
 
-    deinit {
-        print("deinit OnboardingViewController")
-    }
-    
     var viewModel: OracleGameStepOneViewModel!
     var coordinator: OracleGameStepOneCoordinator!
     

@@ -9,11 +9,7 @@
 import UIKit
 
 class FavoritesViewController: UIViewController {
-    
-    deinit {
-        print("deinit OnboardingViewController")
-    }
-    
+
     var viewModel: FavoritesViewModel!
     @IBOutlet weak var tableView: UITableView!
     
@@ -52,9 +48,8 @@ extension FavoritesViewController: FavoritesViewDelegate {
     func didFetchCardsWithSuccess(_ viewModel: FavoritesViewModel) {
         view.activityStopAnimating()
         if viewModel.cards.isEmpty {
-            presentAlert(title: "Attention", message: "You do not have any favorites yet", okAction: {
-                self.dismiss(animated: true, completion: nil)
-                viewModel.stop()
+            presentAlert(title: "Attention", message: "You do not have any favorites yet", okAction: { [weak self] in
+                self?.viewModel.stop()
             })
         } else {
             tableView.reloadData()
@@ -63,9 +58,9 @@ extension FavoritesViewController: FavoritesViewDelegate {
     
     func didFetchCardsWithError(_ viewModel: FavoritesViewModel) {
         view.activityStopAnimating()
-        presentAlert(title: "Error", message: viewModel.errorMessage, okAction: {
-            self.dismiss(animated: true, completion: nil)
-            viewModel.stop()
+        presentAlert(title: "Error", message: viewModel.errorMessage, okAction: { [weak self] in
+            self?.viewModel.dismiss()
+            self?.viewModel.stop()
         })
     }
 }

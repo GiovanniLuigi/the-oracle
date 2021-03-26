@@ -9,11 +9,7 @@
 import UIKit
 
 class OracleGameStepTwoViewController: UIViewController {
-    
-    deinit {
-        print("deinit OnboardingViewController")
-    }
-    
+
     @IBOutlet weak var collectionView: UICollectionView!
     var viewModel: OracleGameStepTwoViewModel!
     

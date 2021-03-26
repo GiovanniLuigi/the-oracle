@@ -9,27 +9,26 @@
 import UIKit
 
 final class OnboardingCoordinator: Coordinator {
-    private(set) var childCoordinators: [Coordinator] = []
+    private(set) var parent: Coordinator?
+    private(set) var navigator: UIKitNavigator?
+    var childCoordinators: [Coordinator] = []
     
-    private let navigationController: UINavigationController
-    private weak var parentCoordinator: AppCoordinator?
-    
-    init(navigationController: UINavigationController, parentCoordinator: AppCoordinator) {
-        self.navigationController = navigationController
-        self.parentCoordinator = parentCoordinator
+    init(parent: Coordinator?, navigator: UIKitNavigator?) {
+        self.parent = parent
+        self.navigator = navigator
     }
     
-    func start() {
+    func start()  {
         let onboardingViewController = OnboardingViewController.instantiate()
         let viewModel = OnboardingViewModel(coordinator: self)
         onboardingViewController.viewModel = viewModel
-        navigationController.setViewControllers([onboardingViewController], animated: false)
+        navigator?.set([onboardingViewController], animated: false)
     }
     
     func startOracleList() {
-        let oracleListCoordinator = OracleListCoordinator(navigationController: navigationController)
+        let oracleListCoordinator = OracleListCoordinator(parent: self, navigator: navigator)
         oracleListCoordinator.start()
-        parentCoordinator?.stop(self)
+        stop()
     }
 }
 

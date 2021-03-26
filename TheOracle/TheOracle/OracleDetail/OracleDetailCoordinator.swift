@@ -9,28 +9,26 @@
 import UIKit
 
 final class OracleDetailCoordinator: Coordinator {
-    private(set) var childCoordinators: [Coordinator] = []
-    private weak var parentCoordinator: OracleListCoordinator?
+    private(set) var parent: Coordinator?
+    private(set) var navigator: UIKitNavigator?
     private let viewModel: OracleCellViewModel
+    var childCoordinators: [Coordinator] = []
     
-    private let navigationController: UINavigationController
-    
-    init(navigationController: UINavigationController, viewModel: OracleCellViewModel, parentCoordinator: OracleListCoordinator) {
-        self.navigationController = navigationController
+    init(parent: Coordinator?, navigator: UIKitNavigator?, viewModel: OracleCellViewModel) {
+        self.parent = parent
+        self.navigator = navigator
         self.viewModel = viewModel
-        self.parentCoordinator = parentCoordinator
     }
     
     func start() {
         let oracleDetailViewController = OracleDetailViewController.instantiate()
         oracleDetailViewController.viewModel = OracleDetailViewModel(coordinator: self, title: viewModel.title, description: viewModel.description)
         oracleDetailViewController.modalPresentationStyle = .overCurrentContext
-        navigationController.present(oracleDetailViewController, animated: true, completion: nil)
-    }
-    
-    func stop() {
-        parentCoordinator?.didFinish(childCoordinator: self)
+        navigator?.present(oracleDetailViewController)
     }
 
+    func willStop() {
+        navigator?.dismiss()
+    }
 }
 

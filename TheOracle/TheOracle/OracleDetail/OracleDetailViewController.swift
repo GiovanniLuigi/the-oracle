@@ -9,11 +9,7 @@
 import UIKit
 
 class OracleDetailViewController: UIViewController {
-    
-    deinit {
-        print("deinit OnboardingViewController")
-    }
-    
+
     @IBOutlet weak var modalCard: CardView!
     @IBOutlet weak var cardTitle: UILabel!
     @IBOutlet weak var cardDescription: UILabel!
@@ -45,11 +41,6 @@ class OracleDetailViewController: UIViewController {
             self?.blurEffectView.effect = UIBlurEffect(style: .extraLight)
         }
     }
-    
-    override func viewDidDisappear(_ animated: Bool) {
-        super.viewDidDisappear(animated)
-        viewModel.viewDidDisappear()
-    }
 
     @objc private func didTapView(_ sender: UITapGestureRecognizer) {
         guard sender.state == .ended else {return}
@@ -59,7 +50,7 @@ class OracleDetailViewController: UIViewController {
             guard let s = self else {return}
             let location = sender.location(in: s.view)
             if !s.modalCard.frame.contains(location) {
-                s.dismiss(animated: true, completion: nil)
+                s.viewModel.shouldStop()
             }
         }
     }

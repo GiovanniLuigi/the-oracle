@@ -10,10 +10,6 @@ import UIKit
 
 class CardDetailViewController: UIViewController {
     
-    deinit {
-        print("deinit OnboardingViewController")
-    }
-    
     @IBOutlet weak var cardImageView: UIImageView!
     @IBOutlet weak var cardDescriptionLabel: UILabel!
     @IBOutlet weak var saveButton: UIButton!
@@ -54,8 +50,8 @@ class CardDetailViewController: UIViewController {
     @objc
     @IBAction func save(_ sender: Any) {
         viewModel.save()
-        presentAlert(title: "Success", message: "Addded to your favorites", okAction: {
-            self.dismiss(animated: true, completion: nil)
+        presentAlert(title: "Success", message: "Addded to your favorites", okAction: { [weak self] in
+            self?.viewModel.dismiss()
         })
     }
     
@@ -74,13 +70,12 @@ class CardDetailViewController: UIViewController {
         cardDescriptionLabel.text = card.description
         title = card.title
         cardImageView.setImage(from: card.imageURL)
-        
     }
     
     private func showError(error: Error) {
         presentAlert(title: "Error", message: error.localizedDescription, okAction:  { [weak self] in
+            self?.viewModel.dismiss()
             self?.viewModel.stop()
-            self?.dismiss(animated: true, completion: nil)
         })
     }
 }

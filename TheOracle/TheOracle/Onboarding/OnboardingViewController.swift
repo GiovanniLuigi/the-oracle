@@ -10,11 +10,7 @@ import UIKit
 import FirebaseStorage
 
 class OnboardingViewController: UIPageViewController {
-    
-    deinit {
-        print("deinit OnboardingViewController")
-    }
-    
+
     @IBOutlet weak var pageControl: UIPageControl!
     var viewModel: OnboardingViewModel!
     var pages: [OnboardingPageViewController] = []

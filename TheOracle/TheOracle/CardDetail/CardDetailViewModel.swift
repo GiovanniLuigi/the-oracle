@@ -9,12 +9,13 @@
 import Foundation
 import CoreData
 
-protocol CardDetailDelegate {
-    func didStop()
-    func didStopGame()
+protocol CardDetailDelegate: class {
+    func shouldStop()
+    func dismiss()
+    func didGoToHome()
 }
 
-protocol CardDetailViewDelegate {
+protocol CardDetailViewDelegate: class {
     func viewModelDidFetchCardWithSuccess(card: OracleCard)
     func viewModelDidFetchCardWithError(error: Error)
 }
@@ -30,20 +31,22 @@ final class CardDetailViewModel {
     let oracleID: String
     let cardCount: Int
     let client: Network
-    let viewDelegate: CardDetailViewDelegate
-    let delegate: CardDetailDelegate
+    weak var viewDelegate: CardDetailViewDelegate?
+    weak var delegate: CardDetailDelegate?
     let dataSource: DataSource
     var card: OracleCard?
     var cardID: String?
-    var isFavorite: Bool = false
+    var isFavorite: Bool
     
-    init(oracleID: String, cardCount: Int, viewDelegate: CardDetailViewDelegate, delegate: CardDetailDelegate) {
+    init(oracleID: String, cardCount: Int, viewDelegate: CardDetailViewDelegate, delegate: CardDetailDelegate, cardID: String?, isFavorite: Bool) {
         self.oracleID = oracleID
         self.cardCount = cardCount
         self.viewDelegate = viewDelegate
         self.client = Network.shared
         self.delegate = delegate
         self.dataSource = DataSource.shared
+        self.isFavorite = isFavorite
+        self.cardID = cardID
     }
     
     func loadCard() {
@@ -54,23 +57,27 @@ final class CardDetailViewModel {
             }
             
             self.card = OracleCard(cid: cardID, title: card.title ?? "", description: card.text ?? "", imageURL: card.imageURL ?? "")
-            self.viewDelegate.viewModelDidFetchCardWithSuccess(card: self.card!)
+            self.viewDelegate?.viewModelDidFetchCardWithSuccess(card: self.card!)
         } else {
             let cardId = "\(oracleID)\(Int.random(in: 1...cardCount))"
             client.getCard(id: cardId) { [weak self] (result) in
                 switch result {
                 case .success(let card):
                     self?.card = card
-                    self?.viewDelegate.viewModelDidFetchCardWithSuccess(card: card)
+                    self?.viewDelegate?.viewModelDidFetchCardWithSuccess(card: card)
                 case .failure(let error):
-                    self?.viewDelegate.viewModelDidFetchCardWithError(error: error)
+                    self?.viewDelegate?.viewModelDidFetchCardWithError(error: error)
                 }
             }
         }
     }
     
     func back() {
-        delegate.didStopGame()
+        delegate?.didGoToHome()
+    }
+    
+    func dismiss() {
+        delegate?.dismiss()
     }
     
     func save() {
@@ -99,6 +106,6 @@ final class CardDetailViewModel {
     }
     
     func stop() {
-        delegate.didStop()
+        delegate?.shouldStop()
     }
 }

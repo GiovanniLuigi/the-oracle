@@ -10,23 +10,27 @@ import UIKit
 
 
 final class AppCoordinator: Coordinator {
-    private(set) var childCoordinators: [Coordinator] = []
-    private let window: UIWindow
+    private(set) var parent: Coordinator?
+    private(set) var navigator: UIKitNavigator?
+    var childCoordinators: [Coordinator] = []
     
+    private let window: UIWindow
+    private let navigationController: UINavigationController
+
     init(window: UIWindow) {
         self.window = window
+        self.navigationController = UINavigationController()
+        self.navigator = UIKitNavigator(navigationController: navigationController)
     }
     
     func start() {
-        let navigationController = UINavigationController()
-        
         if DataSource.shared.checkAndMarkFirstOpen() {
-            let oracleListCoordinator = OracleListCoordinator(navigationController: navigationController)
+            let oracleListCoordinator = OracleListCoordinator(parent: self, navigator: navigator)
             oracleListCoordinator.start()
             
             childCoordinators.append(oracleListCoordinator)
         } else {
-            let onboardingCoordinator = OnboardingCoordinator(navigationController: navigationController, parentCoordinator: self)
+            let onboardingCoordinator = OnboardingCoordinator(parent: self, navigator: navigator)
             onboardingCoordinator.start()
             
             childCoordinators.append(onboardingCoordinator)
@@ -34,13 +38,5 @@ final class AppCoordinator: Coordinator {
         
         window.rootViewController = navigationController
         window.makeKeyAndVisible()
-    }
-    
-    func stop(_ childCoordinator: Coordinator) {
-        if let index = childCoordinators.firstIndex(where: { coordinator -> Bool in
-            return coordinator === childCoordinator
-        }) {
-            childCoordinators.remove(at: index)
-        }
     }
 }

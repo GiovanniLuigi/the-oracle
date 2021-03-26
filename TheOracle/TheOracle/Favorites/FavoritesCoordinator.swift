@@ -9,42 +9,35 @@
 import UIKit
 
 final class FavoritesCoordinator: Coordinator {
-    private(set) var childCoordinators: [Coordinator] = []
-    private let navigationController: UINavigationController
+    private(set) var parent: Coordinator?
+    private(set) var navigator: UIKitNavigator?
+    var childCoordinators: [Coordinator] = []
     
-    init(navigationController: UINavigationController) {
-        self.navigationController = navigationController
+    init(parent: Coordinator?, navigator: UIKitNavigator?) {
+        self.parent = parent
+        self.navigator = navigator
     }
     
-    func start() {
+    func start()  {
         let favoritesViewController = FavoritesViewController.instantiate()
         let viewModel = FavoritesViewModel(viewDelegate: favoritesViewController, coordinator: self)
         favoritesViewController.viewModel = viewModel
         
-        navigationController.pushViewController(favoritesViewController, animated: true)
+        navigator?.push(favoritesViewController)
     }
   
     func startCardDetail(card: CardEntity) {
-        let cardDetailViewController = CardDetailViewController.instantiate()
-        let viewModel = CardDetailViewModel(oracleID: "", cardCount: -1, viewDelegate: cardDetailViewController, delegate: self)
-        viewModel.isFavorite = true
-        viewModel.cardID = card.id ?? ""
+        let oracleCardDetailCoordinator = CardDetailCoordinator(oracleID: "", cardCount: -1, parent: self, navigator: navigator, cardID: card.id, isFavorite: true)
+        oracleCardDetailCoordinator.start()
         
-        cardDetailViewController.viewModel = viewModel
-        navigationController.pushViewController(cardDetailViewController, animated: true)
-    }
-    
-    func stop() {
-        navigationController.popViewController(animated: true)
-    }
-}
-
-extension FavoritesCoordinator: CardDetailDelegate {
-    func didStop() {
-        stop()
-    }
-    
-    func didStopGame() {
-        stop()
+        childCoordinators.append(oracleCardDetailCoordinator)
+//
+//        let cardDetailViewController = CardDetailViewController.instantiate()
+//        let viewModel = CardDetailViewModel(oracleID: "", cardCount: -1, viewDelegate: cardDetailViewController, delegate: self)
+//        viewModel.isFavorite = true
+//        viewModel.cardID = card.id ?? ""
+//
+//        cardDetailViewController.viewModel = viewModel
+//        navigator?.push(cardDetailViewController)
     }
 }

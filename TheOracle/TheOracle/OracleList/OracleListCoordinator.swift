@@ -10,43 +10,38 @@ import UIKit
 
 
 final class OracleListCoordinator: Coordinator {
-    private(set) var childCoordinators: [Coordinator] = []
+    private(set) var parent: Coordinator?
+    private(set) var navigator: UIKitNavigator?
     
-    let navigationController: UINavigationController
+    var childCoordinators: [Coordinator] = []
     
-    init(navigationController: UINavigationController) {
-        self.navigationController = navigationController
+    init(parent: Coordinator?, navigator: UIKitNavigator?) {
+        self.parent = parent
+        self.navigator = navigator
     }
     
     func start() {
         let oracleListViewController = OracleListViewController.instantiate()
         oracleListViewController.viewModel = OracleListViewModel(coordinator: self)
-        navigationController.setViewControllers([oracleListViewController], animated: false)
+        navigator?.set([oracleListViewController], animated: false)
     }
     
     func startOracleDetail(viewModel: OracleCellViewModel) {
-        let oracleDetailCoordinator = OracleDetailCoordinator(navigationController: navigationController, viewModel: viewModel, parentCoordinator: self)
+        let oracleDetailCoordinator = OracleDetailCoordinator(parent: self, navigator: navigator, viewModel: viewModel)
         childCoordinators.append(oracleDetailCoordinator)
         oracleDetailCoordinator.start()
     }
     
     func startOracleGameStepOne(viewModel: OracleGameStepOneViewModel) {
-        let oracleGameStepOneCoordinator = OracleGameStepOneCoordinator(navigationController: navigationController, viewModel: viewModel, parentCoordinator: self)
+        let oracleGameStepOneCoordinator = OracleGameStepOneCoordinator(parent: self, navigator: navigator, viewModel: viewModel)
         childCoordinators.append(oracleGameStepOneCoordinator)
         oracleGameStepOneCoordinator.start()
     }
     
     func startFavorites() {
-        let favoritesCoordinator = FavoritesCoordinator(navigationController: navigationController)
+        let favoritesCoordinator = FavoritesCoordinator(parent: self, navigator: navigator)
         childCoordinators.append(favoritesCoordinator)
         favoritesCoordinator.start()
     }
     
-    func didFinish(childCoordinator: Coordinator) {
-        if let index = childCoordinators.firstIndex(where: { coordinator -> Bool in
-            return coordinator === childCoordinator
-        }) {
-            childCoordinators.remove(at: index)
-        }
-    }
 }

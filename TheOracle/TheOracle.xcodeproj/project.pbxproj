@@ -17,6 +17,7 @@
 		115939EF25CB5CC600612916 /* OracleGameStepTwoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 115939ED25CB5CC600612916 /* OracleGameStepTwoCollectionViewCell.swift */; };
 		115939F025CB5CC600612916 /* OracleGameStepTwoCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 115939EE25CB5CC600612916 /* OracleGameStepTwoCollectionViewCell.xib */; };
 		115939F625CB5DFE00612916 /* OracleGameStepTwoCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 115939F525CB5DFE00612916 /* OracleGameStepTwoCellViewModel.swift */; };
+		117CABDE260BCE7400E483C1 /* Navigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 117CABDD260BCE7400E483C1 /* Navigator.swift */; };
 		117E5B1825BB7CA200B93E74 /* UIImageView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 117E5B1725BB7CA200B93E74 /* UIImageView+Extension.swift */; };
 		117E5B1E25BB823600B93E74 /* UILabel+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 117E5B1D25BB823600B93E74 /* UILabel+Extensions.swift */; };
 		117E5B2325BB83C700B93E74 /* FontConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 117E5B2225BB83C700B93E74 /* FontConstants.swift */; };
@@ -96,6 +97,7 @@
 		115939ED25CB5CC600612916 /* OracleGameStepTwoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OracleGameStepTwoCollectionViewCell.swift; sourceTree = "<group>"; };
 		115939EE25CB5CC600612916 /* OracleGameStepTwoCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OracleGameStepTwoCollectionViewCell.xib; sourceTree = "<group>"; };
 		115939F525CB5DFE00612916 /* OracleGameStepTwoCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OracleGameStepTwoCellViewModel.swift; sourceTree = "<group>"; };
+		117CABDD260BCE7400E483C1 /* Navigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Navigator.swift; sourceTree = "<group>"; };
 		117E5B1725BB7CA200B93E74 /* UIImageView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extension.swift"; sourceTree = "<group>"; };
 		117E5B1D25BB823600B93E74 /* UILabel+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+Extensions.swift"; sourceTree = "<group>"; };
 		117E5B2225BB83C700B93E74 /* FontConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontConstants.swift; sourceTree = "<group>"; };
@@ -270,6 +272,7 @@
 				119B5F3225C20C6D00ECBFF7 /* Coordinator */,
 				117E5B2B25BEFEB600B93E74 /* CardView.swift */,
 				119B5F4925C20F5D00ECBFF7 /* Storyboarded.swift */,
+				117CABDD260BCE7400E483C1 /* Navigator.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -583,6 +586,7 @@
 				119B5F3A25C20C9300ECBFF7 /* Coordinator.swift in Sources */,
 				115939F625CB5DFE00612916 /* OracleGameStepTwoCellViewModel.swift in Sources */,
 				11D80A7425C9FF9300AEAE1C /* OracleGameStepTwoViewController.swift in Sources */,
+				117CABDE260BCE7400E483C1 /* Navigator.swift in Sources */,
 				11D80A7D25CA01BD00AEAE1C /* OracleGameStepTwoViewModel.swift in Sources */,
 				11AA720525C4505500A3185C /* OracleGameStepOneViewController.swift in Sources */,
 				117E5B2C25BEFEB600B93E74 /* CardView.swift in Sources */,

@@ -21,7 +21,7 @@ struct OracleDetailViewModel {
         self.description = description
     }
     
-    func viewDidDisappear() {
+    func shouldStop() {
         coordinator.stop()
     }
 

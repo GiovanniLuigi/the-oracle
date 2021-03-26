@@ -9,15 +9,16 @@
 import UIKit
 
 final class OracleGameStepOneCoordinator: Coordinator {
-    private(set) var childCoordinators: [Coordinator] = []
-    private let navigationController: UINavigationController
-    private var viewModel: OracleGameStepOneViewModel
-    private weak var parentCoordinator: OracleListCoordinator?
+    private(set) var parent: Coordinator?
+    private(set) var navigator: UIKitNavigator?
+    var childCoordinators: [Coordinator] = []
     
-    init(navigationController: UINavigationController, viewModel: OracleGameStepOneViewModel, parentCoordinator: OracleListCoordinator) {
-        self.navigationController = navigationController
+    private var viewModel: OracleGameStepOneViewModel
+
+    init(parent: Coordinator?, navigator: UIKitNavigator?, viewModel: OracleGameStepOneViewModel) {
+        self.parent = parent
+        self.navigator = navigator
         self.viewModel = viewModel
-        self.parentCoordinator = parentCoordinator
     }
     
     func start() {
@@ -26,25 +27,13 @@ final class OracleGameStepOneCoordinator: Coordinator {
         oracleGameStepOneViewController.viewModel = viewModel
         oracleGameStepOneViewController.coordinator = self
         
-        navigationController.pushViewController(oracleGameStepOneViewController, animated: true)
+        navigator?.push(oracleGameStepOneViewController)
     }
     
     func startGameStepTwo(oracleID: String, cardCount: Int, cardBackURL: String) {
-        let oracleGameStepTwoCoordinator = OracleGameStepTwoCoordinator(navigationController: navigationController, parentCoordinator: self, oracleID: oracleID, cardCount: cardCount, cardBackURL: cardBackURL)
+        let oracleGameStepTwoCoordinator = OracleGameStepTwoCoordinator(parent: self, navigator: navigator, oracleID: oracleID, cardCount: cardCount, cardBackURL: cardBackURL)
         childCoordinators.append(oracleGameStepTwoCoordinator)
         oracleGameStepTwoCoordinator.start()
     }
-    
-    func stop() {
-        navigationController.popViewController(animated: true)
-        parentCoordinator?.didFinish(childCoordinator: self)
-    }
-    
-    func didFinish(childCoordinator: Coordinator) {
-        if let index = childCoordinators.firstIndex(where: { coordinator -> Bool in
-            return coordinator === childCoordinator
-        }) {
-            childCoordinators.remove(at: index)
-        }
-    }
+
 }
